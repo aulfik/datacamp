@@ -1,0 +1,450 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.040
+In this video, I'm going to introduce you to functions.
+
+2
+00:00:06.040 --> 00:00:09.400
+Once you learn about them you won't be able to stop using them.
+
+3
+00:00:09.400 --> 00:00:10.880
+I sure can't.
+
+4
+00:00:10.880 --> 00:00:10.880
+
+
+5
+00:00:10.880 --> 00:00:10.880
+
+
+6
+00:00:10.880 --> 00:00:15.600
+Functions aren't entirely new for you actually: you've already used them.
+
+7
+00:00:15.600 --> 00:00:20.160
+type, for example, is a function that returns the type of a value.
+
+8
+00:00:20.160 --> 00:00:22.760
+But what is a function?
+
+9
+00:00:22.760 --> 00:00:29.840
+Simply put, a function is a piece of reusable code, aimed at solving a particular task.
+
+10
+00:00:29.840 --> 00:00:34.080
+You can call functions instead of having to write code yourself.
+
+11
+00:00:34.080 --> 00:00:36.400
+Maybe an example can clarify things here.
+
+12
+00:00:36.400 --> 00:00:37.440
+
+
+13
+00:00:37.440 --> 00:00:37.440
+
+
+14
+00:00:37.440 --> 00:00:40.840
+Suppose you have the list containing only the heights of your
+
+15
+00:00:40.840 --> 00:00:42.280
+family, fam:
+
+16
+00:00:42.280 --> 00:00:42.280
+
+
+17
+00:00:42.280 --> 00:00:45.960
+Say that you want to get the maximum value in this list.
+
+18
+00:00:45.960 --> 00:00:49.560
+Instead of writing your own piece of Python code that goes through the
+
+19
+00:00:49.560 --> 00:00:54.360
+list and finds the highest value, you can also use Python's max function.
+
+20
+00:00:54.360 --> 00:00:59.720
+This is one of Python's built-in functions, just like type.
+
+21
+00:00:59.720 --> 00:01:04.080
+We simply pass fam to max inside parentheses.
+
+22
+00:01:04.080 --> 00:01:04.080
+
+
+23
+00:01:04.080 --> 00:01:04.080
+
+
+24
+00:01:04.080 --> 00:01:08.680
+The output makes sense: 1-point-89, the highest number in the list.
+
+25
+00:01:08.680 --> 00:01:08.680
+
+
+26
+00:01:08.680 --> 00:01:09.720
+
+
+27
+00:01:09.720 --> 00:01:12.880
+max worked kind of like a black box here:
+
+28
+00:01:12.880 --> 00:01:12.880
+
+
+29
+00:01:12.880 --> 00:01:14.600
+you passed it a list, then the
+
+30
+00:01:14.600 --> 00:01:18.280
+implementation of max, that you don't know, did its magic,
+
+31
+00:01:18.280 --> 00:01:18.280
+
+
+32
+00:01:18.280 --> 00:01:20.320
+and produced an output.
+
+33
+00:01:20.320 --> 00:01:25.120
+How max actually did this, is not important to you, it just does what it's
+
+34
+00:01:25.120 --> 00:01:30.680
+supposed to, and you didn't have to write your own code, which made your life easier.
+
+35
+00:01:30.680 --> 00:01:30.680
+
+
+36
+00:01:30.680 --> 00:01:30.680
+
+
+37
+00:01:30.680 --> 00:01:38.040
+Of course, it's possible to also assign the result of a function call to a new variable, like here.
+
+38
+00:01:38.040 --> 00:01:45.600
+Now tallest is just like any other variable; you can use it to continue your fancy calculations.
+
+39
+00:01:45.600 --> 00:01:45.600
+
+
+40
+00:01:45.600 --> 00:01:45.600
+
+
+41
+00:01:45.600 --> 00:01:48.840
+Another one of these built-in functions is round.
+
+42
+00:01:48.840 --> 00:01:55.520
+It takes two inputs: first, a number you want to round, and second, the precision
+
+43
+00:01:55.520 --> 00:02:01.000
+with which to round, which is how many digits after the decimal point you want to keep.
+
+44
+00:02:01.000 --> 00:02:04.640
+Say you want to round 1-point-68 to one decimal place.
+
+45
+00:02:04.640 --> 00:02:10.360
+The first input is 1-point-68, the second input is 1.
+
+46
+00:02:10.360 --> 00:02:12.360
+You separate the inputs with a comma.
+
+47
+00:02:12.360 --> 00:02:13.040
+
+
+48
+00:02:13.040 --> 00:02:13.040
+
+
+49
+00:02:13.040 --> 00:02:15.240
+But there's more.
+
+50
+00:02:15.240 --> 00:02:20.560
+It's perfectly possible to call the round function with only one input, like this.
+
+51
+00:02:20.560 --> 00:02:25.680
+This time, Python figured out that you didn't specify the second
+
+52
+00:02:25.680 --> 00:02:30.720
+input, and automatically chooses to round the number to the closest integer.
+
+53
+00:02:30.720 --> 00:02:30.720
+
+
+54
+00:02:30.720 --> 00:02:30.720
+
+
+55
+00:02:30.720 --> 00:02:36.840
+To understand why both approaches work, let's open up the documentation.
+
+56
+00:02:36.840 --> 00:02:41.000
+You can do this with yet another function, help, like this.
+
+57
+00:02:41.000 --> 00:02:41.000
+
+
+58
+00:02:41.000 --> 00:02:41.000
+
+
+59
+00:02:41.000 --> 00:02:43.480
+It appears that round takes two inputs.
+
+60
+00:02:43.480 --> 00:02:43.480
+
+
+61
+00:02:43.480 --> 00:02:43.840
+
+
+62
+00:02:43.840 --> 00:02:51.120
+In Python, these inputs, also called arguments, have names: number and ndigits.
+
+63
+00:02:51.120 --> 00:02:52.880
+When you call the function round,
+
+64
+00:02:52.880 --> 00:02:52.880
+
+
+65
+00:02:52.880 --> 00:02:55.800
+with these two inputs, Python matches the
+
+66
+00:02:55.800 --> 00:02:57.760
+inputs to the arguments:
+
+67
+00:02:57.760 --> 00:02:57.760
+
+
+68
+00:02:57.760 --> 00:03:00.640
+number is set to 1-point-68 and
+
+69
+00:03:00.640 --> 00:03:00.680
+
+
+70
+00:03:00.680 --> 00:03:03.400
+ndigits is set to 1.
+
+71
+00:03:03.400 --> 00:03:03.880
+Next,
+
+72
+00:03:03.880 --> 00:03:03.880
+
+
+73
+00:03:03.880 --> 00:03:13.000
+The round function does its calculations with number and ndigits as if they are Python variables in a script.
+
+74
+00:03:13.000 --> 00:03:16.160
+We don't know exactly what code Python executes.
+
+75
+00:03:16.160 --> 00:03:20.440
+What is important, though, is that the function produces an
+
+76
+00:03:20.440 --> 00:03:21.360
+output,
+
+77
+00:03:21.360 --> 00:03:21.600
+
+
+78
+00:03:21.600 --> 00:03:25.360
+namely the number 1-point-68 rounded to 1 decimal place.
+
+79
+00:03:25.360 --> 00:03:25.360
+
+
+80
+00:03:25.360 --> 00:03:26.320
+
+
+81
+00:03:26.320 --> 00:03:29.200
+If you call the function round with only one input,
+
+82
+00:03:29.200 --> 00:03:29.200
+
+
+83
+00:03:29.200 --> 00:03:31.120
+Python again tries to
+
+84
+00:03:31.120 --> 00:03:31.160
+
+
+85
+00:03:31.160 --> 00:03:32.200
+match the inputs to
+
+86
+00:03:32.200 --> 00:03:32.200
+
+
+87
+00:03:32.200 --> 00:03:33.160
+the arguments.
+
+88
+00:03:33.160 --> 00:03:37.280
+There's no input to match to the ndigits argument though.
+
+89
+00:03:37.280 --> 00:03:38.520
+Luckily,
+
+90
+00:03:38.520 --> 00:03:38.520
+
+
+91
+00:03:38.520 --> 00:03:42.880
+the internal machinery of the round function knows how to handle this.
+
+92
+00:03:42.880 --> 00:03:49.160
+When ndigits is not specified, the function simply rounds to the closest integer and
+
+93
+00:03:49.160 --> 00:03:49.160
+
+
+94
+00:03:49.160 --> 00:03:50.760
+returns that integer.
+
+95
+00:03:50.760 --> 00:03:53.360
+That's why we got the number 2.
+
+96
+00:03:53.360 --> 00:03:53.360
+
+
+97
+00:03:53.360 --> 00:03:53.360
+
+
+98
+00:03:53.360 --> 00:03:57.960
+In other words, ndigits is an optional argument.
+
+99
+00:03:57.960 --> 00:04:04.080
+This tells us that you can call round in this form, as well as in this one.
+
+100
+00:04:04.080 --> 00:04:04.080
+
+
+101
+00:04:04.080 --> 00:04:04.080
+
+
+102
+00:04:04.080 --> 00:04:09.920
+By now, you have an idea about how to use max and round, but how could
+
+103
+00:04:09.920 --> 00:04:14.320
+you know that a function such as round exists in Python in the first place?
+
+104
+00:04:14.320 --> 00:04:17.600
+Well, this is something you will learn with time.
+
+105
+00:04:17.600 --> 00:04:21.800
+Whenever you are doing a rather standard task in Python, you can be
+
+106
+00:04:21.800 --> 00:04:25.000
+pretty sure that there's already a function that can do this for you.
+
+107
+00:04:25.000 --> 00:04:27.960
+In that case, you should definitely use it!
+
+108
+00:04:27.960 --> 00:04:33.360
+Just do a quick internet search and you'll find the function you need with a nice usage example.
+
+109
+00:04:33.360 --> 00:04:40.000
+And there is of course DataCamp, where you'll also learn about powerful functions and how to use them.
+
+110
+00:04:40.000 --> 00:04:40.000
+
+
+111
+00:04:40.000 --> 00:04:40.000
+
+
+112
+00:04:40.000 --> 00:04:49.080
+Get straight to it in the interactive exercises, and I'll see you back here soon!
+

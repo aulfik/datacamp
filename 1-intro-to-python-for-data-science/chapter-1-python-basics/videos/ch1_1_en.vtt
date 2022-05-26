@@ -1,0 +1,322 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:08.360
+Hi, my name is Hugo and I'll be your host for Introduction to Python for Data Science.
+
+2
+00:00:08.360 --> 00:00:08.360
+
+
+3
+00:00:08.360 --> 00:00:08.360
+
+
+4
+00:00:08.360 --> 00:00:15.080
+I'm a data scientist and educator at DataCamp and host of the DataFramed podcast, which you must check out.
+
+5
+00:00:15.080 --> 00:00:15.080
+
+
+6
+00:00:15.080 --> 00:00:15.080
+
+
+7
+00:00:15.080 --> 00:00:18.320
+In this course, you will learn Python for Data Science
+
+8
+00:00:18.320 --> 00:00:23.400
+through video lessons, like this one, and interactive exercises.
+
+9
+00:00:23.400 --> 00:00:26.800
+You get your own Python session where you can experiment and
+
+10
+00:00:26.800 --> 00:00:30.440
+try to come up with the correct code to solve the instructions.
+
+11
+00:00:30.440 --> 00:00:35.320
+You're learning by doing, while receiving customized and instant feedback on your work.
+
+12
+00:00:35.320 --> 00:00:35.320
+
+
+13
+00:00:35.320 --> 00:00:35.320
+
+
+14
+00:00:35.320 --> 00:00:39.880
+Python was conceived by Guido Van Rossum.
+
+15
+00:00:39.880 --> 00:00:43.080
+Here, you can see a photo of me with Guido.
+
+16
+00:00:43.080 --> 00:00:47.760
+What started as a hobby project, soon became a general purpose programming
+
+17
+00:00:47.760 --> 00:00:53.800
+language: nowadays, you can use Python to build practically any piece of software.
+
+18
+00:00:53.800 --> 00:00:55.480
+But how did this happen?
+
+19
+00:00:55.480 --> 00:00:59.200
+Well, first of all, Python is open source.
+
+20
+00:00:59.200 --> 00:01:00.680
+It's free to use.
+
+21
+00:01:00.680 --> 00:01:04.920
+Second, it's very easy to build packages in Python, which is
+
+22
+00:01:04.920 --> 00:01:09.600
+code that you can share with other people to solve specific problems.
+
+23
+00:01:09.600 --> 00:01:15.760
+Throughout time, more and more of these packages specifically built for data science have been developed.
+
+24
+00:01:15.760 --> 00:01:20.160
+Suppose you want to make some fancy visualizations of your company's sales.
+
+25
+00:01:20.160 --> 00:01:21.880
+There's a package for that.
+
+26
+00:01:21.880 --> 00:01:25.920
+Or what about connecting to a database to analyze sensor measurements?
+
+27
+00:01:25.920 --> 00:01:28.640
+There's also a package for that.
+
+28
+00:01:28.640 --> 00:01:28.760
+
+
+29
+00:01:28.760 --> 00:01:36.080
+People often refer to Python as the swiss army knife of programming languages as you can do almost anything with it.
+
+30
+00:01:36.080 --> 00:01:36.800
+
+
+31
+00:01:36.800 --> 00:01:39.720
+In this course, we'll start to build up your data
+
+32
+00:01:39.720 --> 00:01:46.720
+science coding skills bit by bit, so make sure to stick around to see how powerful the language can be.
+
+33
+00:01:46.720 --> 00:01:46.720
+
+
+34
+00:01:46.720 --> 00:01:46.720
+
+
+35
+00:01:46.720 --> 00:01:48.760
+Our courses focus on Python 3.
+
+36
+00:01:48.760 --> 00:01:55.680
+To install Python 3 on your own system, follow the steps at this URL.
+
+37
+00:01:55.680 --> 00:01:55.680
+
+
+38
+00:01:55.680 --> 00:01:55.680
+
+
+39
+00:01:55.680 --> 00:02:00.520
+Now that you're all eyes and ears for Python, let's start experimenting.
+
+40
+00:02:00.520 --> 00:02:01.440
+I'll start with the
+
+41
+00:02:01.440 --> 00:02:01.440
+
+
+42
+00:02:01.440 --> 00:02:07.480
+Python shell, a place where you can type Python code and immediately see the results.
+
+43
+00:02:07.480 --> 00:02:12.080
+In DataCamp's exercise interface, this shell is embedded here.
+
+44
+00:02:12.080 --> 00:02:16.000
+Let's start off simple and use Python as a calculator.
+
+45
+00:02:16.000 --> 00:02:16.000
+
+
+46
+00:02:16.000 --> 00:02:16.000
+
+
+47
+00:02:16.000 --> 00:02:19.040
+Let me type 4 + 5, and hit Enter.
+
+48
+00:02:19.040 --> 00:02:25.720
+Python interprets what you typed and prints the result of your calculation, 9.
+
+49
+00:02:25.720 --> 00:02:32.280
+The Python shell that's used here is actually not the original one; we're using IPython, short for
+
+50
+00:02:32.280 --> 00:02:38.800
+Interactive Python, which is some kind of juiced up version of regular Python that'll be useful later on.
+
+51
+00:02:38.800 --> 00:02:38.800
+
+
+52
+00:02:38.800 --> 00:02:39.720
+
+
+53
+00:02:39.720 --> 00:02:45.960
+IPython was created by Fernando Pérez and is part of the broader Jupyter ecosystem.
+
+54
+00:02:45.960 --> 00:02:51.880
+Apart from interactively working with Python, you can also have Python run so called
+
+55
+00:02:51.880 --> 00:02:51.880
+
+
+56
+00:02:51.880 --> 00:02:53.080
+python scripts.
+
+57
+00:02:53.080 --> 00:02:59.040
+These python scripts are simply text files with the extension (dot) py.
+
+58
+00:02:59.040 --> 00:03:03.120
+It's basically a list of Python commands that are executed, almost
+
+59
+00:03:03.120 --> 00:03:06.720
+as if you where typing the commands in the shell yourself, line by line.
+
+60
+00:03:06.720 --> 00:03:06.720
+
+
+61
+00:03:06.720 --> 00:03:06.720
+
+
+62
+00:03:06.720 --> 00:03:13.720
+Let's put the command from before in a script now, which can be found here in DataCamp's interface.
+
+63
+00:03:13.720 --> 00:03:19.800
+The next step is executing the script, by clicking 'Submit Answer'.
+
+64
+00:03:19.800 --> 00:03:25.600
+If you execute this script in the DataCamp interface, there's nothing in the output pane.
+
+65
+00:03:25.600 --> 00:03:32.600
+That's because you have to explicitly use print inside scripts if you want to generate output during execution.
+
+66
+00:03:32.600 --> 00:03:32.600
+
+
+67
+00:03:32.600 --> 00:03:32.600
+
+
+68
+00:03:32.600 --> 00:03:38.680
+Let's wrap our previous calculation in a print call, and rerun the script.
+
+69
+00:03:38.680 --> 00:03:43.640
+This time, the same output as before is generated, great!
+
+70
+00:03:43.640 --> 00:03:49.800
+Putting your code in Python scripts instead of manually retyping every step interactively
+
+71
+00:03:49.800 --> 00:03:55.520
+will help you to keep structure and avoid retyping everything over and over again if you
+
+72
+00:03:55.520 --> 00:04:01.240
+want to make a change; you simply make the change in the script, and rerun the entire thing.
+
+73
+00:04:01.240 --> 00:04:01.240
+
+
+74
+00:04:01.240 --> 00:04:01.240
+
+
+75
+00:04:01.240 --> 00:04:09.200
+Now that you've got an idea about different ways of working with Python, I suggest you head over to the exercises.
+
+76
+00:04:09.200 --> 00:04:14.960
+Use the IPython Shell for experimentation, and use the Python script editor to code the actual answer.
+
+77
+00:04:14.960 --> 00:04:20.560
+If you click Submit Answer, your script will be executed and checked for correctness.
+
+78
+00:04:20.560 --> 00:04:20.560
+
+
+79
+00:04:20.560 --> 00:04:20.560
+
+
+80
+00:04:20.560 --> 00:04:27.280
+Get coding and don't forget to have fun!
+
