@@ -1,0 +1,370 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.720
+As a data scientist, you'll often be working with tons of data.
+
+2
+00:00:06.720 --> 00:00:09.240
+The form of this data can vary greatly, but pretty
+
+3
+00:00:09.240 --> 00:00:16.120
+often, you can boil it down to a tabular structure, that is, in the form of a table like in a spreadsheet.
+
+4
+00:00:16.120 --> 00:00:18.680
+Let's have a look at some examples.
+
+5
+00:00:18.680 --> 00:00:18.680
+
+
+6
+00:00:18.680 --> 00:00:18.680
+
+
+7
+00:00:18.680 --> 00:00:23.920
+Suppose you're working in a chemical plant and have a ton of temperature measurements to analyze.
+
+8
+00:00:23.920 --> 00:00:26.400
+This data can come in the following form:
+
+9
+00:00:26.400 --> 00:00:26.400
+
+
+10
+00:00:26.400 --> 00:00:28.120
+every row is a measurement,
+
+11
+00:00:28.120 --> 00:00:33.200
+or an observation, and for each observation, there are different variables.
+
+12
+00:00:33.200 --> 00:00:35.040
+For each measurement, there's of course
+
+13
+00:00:35.040 --> 00:00:40.880
+the temperature, but also the date and time of the measurement, and the location.
+
+14
+00:00:40.880 --> 00:00:43.840
+Another example: you have collected information on the
+
+15
+00:00:43.840 --> 00:00:50.320
+so-called BRICS countries, Brazil, Russia, India, China and South Africa.
+
+16
+00:00:50.320 --> 00:00:52.600
+You can again build a table with this data,
+
+17
+00:00:52.600 --> 00:00:52.600
+
+
+18
+00:00:52.600 --> 00:00:53.920
+like this.
+
+19
+00:00:53.920 --> 00:00:57.120
+Each row is an observation and represents a country.
+
+20
+00:00:57.120 --> 00:01:01.480
+Each observation has the same variables: the country name, the capital,
+
+21
+00:01:01.480 --> 00:01:05.640
+the area in millions of square kilometers and the population in millions.
+
+22
+00:01:05.640 --> 00:01:05.640
+
+
+23
+00:01:05.640 --> 00:01:06.480
+
+
+24
+00:01:06.480 --> 00:01:12.480
+To start working on this data in Python, you'll need some kind of rectangular data structure.
+
+25
+00:01:12.480 --> 00:01:14.480
+That's easy, we already know one!
+
+26
+00:01:14.480 --> 00:01:16.880
+The 2D NumPy array, right?
+
+27
+00:01:16.880 --> 00:01:22.000
+Well, it's an option, but not necessarily the best one.
+
+28
+00:01:22.000 --> 00:01:29.040
+In the two examples we covered, there are different data types and NumPy arrays are not great at handling these.
+
+29
+00:01:29.040 --> 00:01:30.920
+In the BRICS example,
+
+30
+00:01:30.920 --> 00:01:30.920
+
+
+31
+00:01:30.920 --> 00:01:33.760
+the area and population are floats, while
+
+32
+00:01:33.760 --> 00:01:33.760
+
+
+33
+00:01:33.760 --> 00:01:36.920
+the country and capital are strings, for example.
+
+34
+00:01:36.920 --> 00:01:43.160
+Your datasets will typically comprise different data types, so we need a tool that's better suited for the job.
+
+35
+00:01:43.160 --> 00:01:43.160
+
+
+36
+00:01:43.160 --> 00:01:44.640
+
+
+37
+00:01:44.640 --> 00:01:48.720
+To easily and efficiently handle this data, there's the Pandas package.
+
+38
+00:01:48.720 --> 00:01:56.520
+Pandas is a high level data manipulation tool developed by Wes McKinney, built on the NumPy package.
+
+39
+00:01:56.520 --> 00:02:03.840
+Compared to NumPy, it's more high level, making it very interesting for data scientists all over the world.
+
+40
+00:02:03.840 --> 00:02:10.760
+In pandas, we store the tabular data like the brics table here in an object called a DataFrame.
+
+41
+00:02:10.760 --> 00:02:14.400
+Have a look at the Pandas DataFrame version of the BRICS data I showed you before:
+
+42
+00:02:14.400 --> 00:02:15.400
+
+
+43
+00:02:15.400 --> 00:02:16.160
+You see a
+
+44
+00:02:16.160 --> 00:02:22.760
+similar structure: the rows represent the observations, and the columns represent the variables.
+
+45
+00:02:22.760 --> 00:02:30.320
+Also notice that each row has a unique row label: BR for Brazil, RU for Russia, and so on.
+
+46
+00:02:30.320 --> 00:02:37.320
+The columns, or variables, also have labels: country, population, and so on.
+
+47
+00:02:37.320 --> 00:02:40.880
+Notice that the values in the different columns have different types.
+
+48
+00:02:40.880 --> 00:02:40.880
+
+
+49
+00:02:40.880 --> 00:02:41.440
+
+
+50
+00:02:41.440 --> 00:02:46.680
+This is all great news, but how can we create this DataFrame in the first place?
+
+51
+00:02:46.680 --> 00:02:48.680
+Well, there are different ways.
+
+52
+00:02:48.680 --> 00:02:48.680
+
+
+53
+00:02:48.680 --> 00:02:49.640
+
+
+54
+00:02:49.640 --> 00:02:54.360
+First of all, you can build it manually, starting from a dictionary.
+
+55
+00:02:54.360 --> 00:02:59.480
+Using the distinctive curly brackets, we create key value pairs.
+
+56
+00:02:59.480 --> 00:03:05.080
+The keys are the column labels, and the values are the corresponding columns, in list form.
+
+57
+00:03:05.080 --> 00:03:13.920
+After importing the pandas package as pd, you can create a DataFrame from the dictionary using pd (dot) DataFrame.
+
+58
+00:03:13.920 --> 00:03:13.920
+
+
+59
+00:03:13.920 --> 00:03:13.920
+
+
+60
+00:03:13.920 --> 00:03:16.400
+If you check out brics now, we're almost there.
+
+61
+00:03:16.400 --> 00:03:20.560
+Pandas assigned some automatic row labels, 0 up to 4.
+
+62
+00:03:20.560 --> 00:03:27.360
+To specify them manually, you can set the index attribute of brics to a list with the correct labels.
+
+63
+00:03:27.360 --> 00:03:32.160
+The resulting brics DataFrame is the same one as you saw before.
+
+64
+00:03:32.160 --> 00:03:32.160
+
+
+65
+00:03:32.160 --> 00:03:33.520
+
+
+66
+00:03:33.520 --> 00:03:37.000
+Using a dictionary approach is fine, but what if you're working
+
+67
+00:03:37.000 --> 00:03:41.840
+with tons of data, which is typically the case as a data scientist?
+
+68
+00:03:41.840 --> 00:03:45.040
+Well, you won't build the DataFrame manually.
+
+69
+00:03:45.040 --> 00:03:49.840
+Instead, you import data from an external file that contains all this data.
+
+70
+00:03:49.840 --> 00:03:50.560
+
+
+71
+00:03:50.560 --> 00:03:50.560
+
+
+72
+00:03:50.560 --> 00:03:57.600
+Suppose the brics data that I showed you before comes in the form of a CSV file called brics.
+
+73
+00:03:57.600 --> 00:03:58.280
+csv.
+
+74
+00:03:58.280 --> 00:04:02.840
+By the way, CSV is short for comma separated values.
+
+75
+00:04:02.840 --> 00:04:02.840
+
+
+76
+00:04:02.840 --> 00:04:03.960
+
+
+77
+00:04:03.960 --> 00:04:08.880
+Let's try to import this data into Python using Pandas read_csv function.
+
+78
+00:04:08.880 --> 00:04:13.640
+You pass the path to the csv file as an argument.
+
+79
+00:04:13.640 --> 00:04:13.720
+
+
+80
+00:04:13.720 --> 00:04:13.720
+
+
+81
+00:04:13.720 --> 00:04:16.400
+If you now print brics, there's still something wrong.
+
+82
+00:04:16.400 --> 00:04:19.960
+The row labels are seen as a column in their own right.
+
+83
+00:04:19.960 --> 00:04:26.960
+To solve this, we'll have to tell the read_csv function that the first column contains the row indexes.
+
+84
+00:04:26.960 --> 00:04:31.000
+You do this by setting the index_col argument, like this.
+
+85
+00:04:31.000 --> 00:04:31.000
+
+
+86
+00:04:31.000 --> 00:04:31.000
+
+
+87
+00:04:31.000 --> 00:04:36.760
+This time brics contains the DataFrame we started with in this video.
+
+88
+00:04:36.760 --> 00:04:39.760
+It nicely contains the row and column labels.
+
+89
+00:04:39.760 --> 00:04:46.960
+The read_csv function features many more arguments that allow you to customize your data import, make sure
+
+90
+00:04:46.960 --> 00:04:48.480
+to check out its documentation
+
+91
+00:04:48.480 --> 00:04:48.480
+
+
+92
+00:04:48.480 --> 00:04:57.600
+Now head over to the exercises, to experiment with building DataFrames yourself!
+

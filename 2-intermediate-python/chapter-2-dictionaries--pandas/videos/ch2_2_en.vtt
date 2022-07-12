@@ -1,0 +1,346 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.120
+In the previous video,
+
+2
+00:00:04.120 --> 00:00:04.120
+
+
+3
+00:00:04.120 --> 00:00:09.440
+we created the dictionary "world", which basically is a set of key value pairs.
+
+4
+00:00:09.440 --> 00:00:16.440
+You could easily access the population of Albania, by passing the key in square brackets, like this.
+
+5
+00:00:16.440 --> 00:00:16.480
+
+
+6
+00:00:16.480 --> 00:00:16.480
+
+
+7
+00:00:16.480 --> 00:00:21.560
+For this lookup to work properly, the keys in a dictionary should be unique.
+
+8
+00:00:21.560 --> 00:00:26.840
+If you try to add another key:value pair to world with the same key, Albania, for
+
+9
+00:00:26.840 --> 00:00:32.520
+example, you'll see that the resulting world dictionary still contains three pairs.
+
+10
+00:00:32.520 --> 00:00:37.400
+The last pair that you specified in the curly brackets was kept in the resulting dictionary.
+
+11
+00:00:37.400 --> 00:00:38.400
+
+
+12
+00:00:38.400 --> 00:00:38.400
+
+
+13
+00:00:38.400 --> 00:00:44.880
+Also, these unique keys in a dictionary should be so-called immutable objects.
+
+14
+00:00:44.880 --> 00:00:50.120
+Basically, the content of immutable objects cannot be changed after they're created.
+
+15
+00:00:50.120 --> 00:00:55.840
+Strings, booleans, integers and floats are immutable objects, but the list
+
+16
+00:00:55.840 --> 00:01:01.720
+for example is mutable, because you can change its contents after it's created.
+
+17
+00:01:01.720 --> 00:01:01.720
+
+
+18
+00:01:01.720 --> 00:01:01.720
+
+
+19
+00:01:01.720 --> 00:01:08.480
+That's why this dictionary, that has all immutable objects as keys, is perfectly valid.
+
+20
+00:01:08.480 --> 00:01:08.480
+
+
+21
+00:01:08.480 --> 00:01:08.480
+
+
+22
+00:01:08.480 --> 00:01:14.600
+This one, however, that uses a list as a key, is not valid, so we get an error.
+
+23
+00:01:14.600 --> 00:01:14.600
+
+
+24
+00:01:14.600 --> 00:01:14.600
+
+
+25
+00:01:14.600 --> 00:01:19.240
+So now that you have an idea of how to build a valid dictionary and how to access it
+
+26
+00:01:19.240 --> 00:01:25.880
+using square brackets, let's see how we can add more data to a dictionary that already exists.
+
+27
+00:01:25.880 --> 00:01:25.880
+
+
+28
+00:01:25.880 --> 00:01:25.880
+
+
+29
+00:01:25.880 --> 00:01:34.400
+Say for example that you, an employee of the World Bank, decide to acknowledge the Principality of Sealand.
+
+30
+00:01:34.400 --> 00:01:41.400
+Sealand is an unrecognized micronation, on an offshore platform located in the North Sea.
+
+31
+00:01:41.400 --> 00:01:44.160
+At the moment, it has 27 inhabitants.
+
+32
+00:01:44.160 --> 00:01:44.160
+
+
+33
+00:01:44.160 --> 00:01:44.720
+
+
+34
+00:01:44.720 --> 00:01:48.960
+To add this information, simply write the key sealand in square
+
+35
+00:01:48.960 --> 00:01:55.640
+brackets and assign 27 expressed in millions to it with the equals sign.
+
+36
+00:01:55.640 --> 00:01:55.640
+
+
+37
+00:01:55.640 --> 00:01:55.680
+
+
+38
+00:01:55.680 --> 00:01:59.240
+If you check out "world" again, indeed, sealand is in there.
+
+39
+00:01:59.240 --> 00:02:08.560
+To check this with code, you can also write "sealand in world", which gives you True if the key sealand is in there.
+
+40
+00:02:08.560 --> 00:02:08.560
+
+
+41
+00:02:08.560 --> 00:02:08.560
+
+
+42
+00:02:08.560 --> 00:02:15.960
+With the same syntax, you can also change values, for example, to update the population of sealand to 28.
+
+43
+00:02:15.960 --> 00:02:22.160
+Because each key in a dictionary is unique, Python knows that you're not
+
+44
+00:02:22.160 --> 00:02:27.280
+trying to create a new pair, but want to update the pair that's already in there.
+
+45
+00:02:27.280 --> 00:02:27.280
+
+
+46
+00:02:27.280 --> 00:02:28.360
+
+
+47
+00:02:28.360 --> 00:02:32.160
+You can see this from the printout here.
+
+48
+00:02:32.160 --> 00:02:32.160
+
+
+49
+00:02:32.160 --> 00:02:32.160
+
+
+50
+00:02:32.160 --> 00:02:38.960
+Suppose now that your boss didn't see the humour of adding Sealand to the list, and asks you to remove it again.
+
+51
+00:02:38.960 --> 00:02:44.240
+You can do this with del, again pointing to sealand inside square brackets.
+
+52
+00:02:44.240 --> 00:02:48.640
+If you print world again, Sealand is no longer in there.
+
+53
+00:02:48.640 --> 00:02:49.600
+Good riddance!
+
+54
+00:02:49.600 --> 00:02:49.600
+
+
+55
+00:02:49.600 --> 00:02:50.520
+
+
+56
+00:02:50.520 --> 00:02:54.000
+If you remember the discussion of lists from the intro course,
+
+57
+00:02:54.000 --> 00:02:55.880
+you'll notice that using lists
+
+58
+00:02:55.880 --> 00:02:55.880
+
+
+59
+00:02:55.880 --> 00:02:58.440
+and dictionaries is pretty similar.
+
+60
+00:02:58.440 --> 00:02:58.800
+You can
+
+61
+00:02:58.800 --> 00:02:58.800
+
+
+62
+00:02:58.800 --> 00:03:02.320
+select, update and remove elements with square brackets.
+
+63
+00:03:02.320 --> 00:03:02.320
+
+
+64
+00:03:02.320 --> 00:03:02.840
+
+
+65
+00:03:02.840 --> 00:03:04.480
+There are some big differences though.
+
+66
+00:03:04.480 --> 00:03:07.360
+The list is a sequence of values
+
+67
+00:03:07.360 --> 00:03:07.360
+
+
+68
+00:03:07.360 --> 00:03:10.120
+that are indexed by a range of numbers.
+
+69
+00:03:10.120 --> 00:03:13.240
+The dictionary, on the other hand,
+
+70
+00:03:13.240 --> 00:03:13.400
+
+
+71
+00:03:13.400 --> 00:03:18.240
+is indexed by unique keys, that can be any immutable type.
+
+72
+00:03:18.240 --> 00:03:20.680
+When to use which one, I hear you ask?
+
+73
+00:03:20.680 --> 00:03:20.680
+
+
+74
+00:03:20.680 --> 00:03:20.680
+
+
+75
+00:03:20.680 --> 00:03:23.800
+Well, if you have a collection of values
+
+76
+00:03:23.800 --> 00:03:23.800
+
+
+77
+00:03:23.800 --> 00:03:24.040
+where
+
+78
+00:03:24.040 --> 00:03:31.280
+the order matters, and you want to easily select entire subsets of data, you'll want to go with a list.
+
+79
+00:03:31.280 --> 00:03:33.440
+If, on the other hand, you need some sort of
+
+80
+00:03:33.440 --> 00:03:33.440
+
+
+81
+00:03:33.440 --> 00:03:35.440
+look up table, where looking for data
+
+82
+00:03:35.440 --> 00:03:40.680
+should be fast and where you can specify unique keys, a dictionary is the preferred option.
+
+83
+00:03:40.680 --> 00:03:40.680
+
+
+84
+00:03:40.680 --> 00:03:40.680
+
+
+85
+00:03:40.680 --> 00:03:44.840
+Now off to some more exercises on dictionaries!
+
+86
+00:03:44.840 --> 00:03:49.800
+I'll see you back here soon.
+

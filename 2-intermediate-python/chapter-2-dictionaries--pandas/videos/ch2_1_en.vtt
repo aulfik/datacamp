@@ -1,0 +1,246 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.880
+Weeeeeelcome back.
+
+2
+00:00:04.880 --> 00:00:06.920
+Now do I have a treat for you.
+
+3
+00:00:06.920 --> 00:00:12.040
+In this video, I'll be talking about a new Python type: the dictionary.
+
+4
+00:00:12.040 --> 00:00:16.880
+Dictionaries are sooooo useful in the data world and to see this, imagine the
+
+5
+00:00:16.880 --> 00:00:23.160
+following: you work for the World Bank and want to keep track of the population in each country.
+
+6
+00:00:23.160 --> 00:00:23.160
+
+
+7
+00:00:23.160 --> 00:00:23.160
+
+
+8
+00:00:23.160 --> 00:00:25.520
+You can put the populations in a list.
+
+9
+00:00:25.520 --> 00:00:28.040
+You start with Afghanistan, 30.
+
+10
+00:00:28.040 --> 00:00:31.040
+55 million, Albania, 2.
+
+11
+00:00:31.040 --> 00:00:34.840
+77 million, Algeria, around 40 million, and so on.
+
+12
+00:00:34.840 --> 00:00:34.840
+
+
+13
+00:00:34.840 --> 00:00:34.840
+
+
+14
+00:00:34.840 --> 00:00:38.280
+To keep track about which population belongs to
+
+15
+00:00:38.280 --> 00:00:44.640
+which country, you can create a second list, with the names of the countries in the same order as the populations.
+
+16
+00:00:44.640 --> 00:00:44.640
+
+
+17
+00:00:44.640 --> 00:00:44.640
+
+
+18
+00:00:44.640 --> 00:00:48.640
+Now suppose that want to get the population of Albania.
+
+19
+00:00:48.640 --> 00:00:52.160
+First, you have to figure out where in the list Albania is,
+
+20
+00:00:52.160 --> 00:00:55.760
+so that you can use this position to get the correct population.
+
+21
+00:00:55.760 --> 00:01:02.040
+Remember about the method index(), a list method you learned about in the Intro to Python course?
+
+22
+00:01:02.040 --> 00:01:06.440
+Let's use it to get the index of Albania in countries, like this.
+
+23
+00:01:06.440 --> 00:01:06.440
+
+
+24
+00:01:06.440 --> 00:01:06.480
+
+
+25
+00:01:06.480 --> 00:01:13.200
+Now, we can use this index to subset the pop list, to get the population corresponding to Albania.
+
+26
+00:01:13.200 --> 00:01:15.200
+As expected, we get 2.
+
+27
+00:01:15.200 --> 00:01:18.200
+77, the population of Albania in millions.
+
+28
+00:01:18.200 --> 00:01:18.920
+
+
+29
+00:01:18.920 --> 00:01:18.920
+
+
+30
+00:01:18.920 --> 00:01:24.640
+So we built two lists, and used the index to connect corresponding elements in both lists.
+
+31
+00:01:24.640 --> 00:01:30.680
+It worked, but it's a pretty terrible approach: it's not convenient and not intuitive.
+
+32
+00:01:30.680 --> 00:01:38.320
+Wouldn't it be easier if we had a way to connect each country directly to its population, without using an index?
+
+33
+00:01:38.320 --> 00:01:41.600
+This is where the dictionary comes into play.
+
+34
+00:01:41.600 --> 00:01:41.600
+
+
+35
+00:01:41.600 --> 00:01:41.600
+
+
+36
+00:01:41.600 --> 00:01:45.680
+Let's convert this population data to a dictionary.
+
+37
+00:01:45.680 --> 00:01:50.560
+I included the lists to start from on the top here, so you can see what's going on.
+
+38
+00:01:50.560 --> 00:01:50.560
+
+
+39
+00:01:50.560 --> 00:01:50.560
+
+
+40
+00:01:50.560 --> 00:01:55.360
+To create the dictionary, you need curly brackets.
+
+41
+00:01:55.360 --> 00:02:01.040
+Next, inside the curly brackets, you have a bunch of what are called key:value pairs.
+
+42
+00:02:01.040 --> 00:02:06.680
+In our case, the keys are the country names, and the values are the corresponding populations.
+
+43
+00:02:06.680 --> 00:02:06.680
+
+
+44
+00:02:06.680 --> 00:02:06.680
+
+
+45
+00:02:06.680 --> 00:02:11.360
+The first key is Afghanistan, and its corresponding value is 30.
+
+46
+00:02:11.360 --> 00:02:12.760
+55.
+
+47
+00:02:12.760 --> 00:02:16.720
+Notice the colon that separates the key and value here.
+
+48
+00:02:16.720 --> 00:02:24.320
+Let's do the same thing for the two other key-value pairs, and store the dictionary under the name world.
+
+49
+00:02:24.320 --> 00:02:24.320
+
+
+50
+00:02:24.320 --> 00:02:24.320
+
+
+51
+00:02:24.320 --> 00:02:28.040
+If you know want to find the population for Albania, you
+
+52
+00:02:28.040 --> 00:02:33.600
+simply type world, and then the string Albania inside square brackets.
+
+53
+00:02:33.600 --> 00:02:38.680
+In other words, you pass the key in square brackets, and you get the corresponding value.
+
+54
+00:02:38.680 --> 00:02:44.120
+The key opens the door to the value: pretty poetic, isn't it?
+
+55
+00:02:44.120 --> 00:02:48.160
+This approach is not only intuitive, it's also very efficient, because
+
+56
+00:02:48.160 --> 00:02:53.440
+Python can make the lookup of these keys very fast, even for huge dictionaries.
+
+57
+00:02:53.440 --> 00:02:53.440
+
+
+58
+00:02:53.440 --> 00:02:53.440
+
+
+59
+00:02:53.440 --> 00:02:57.200
+Get lyrical about dictionaries yourself in the exercises.
+
+60
+00:02:57.200 --> 00:03:00.800
+In the next video, we'll delve deeper into how to use them.
+
+61
+00:03:00.800 --> 00:03:04.680
+I can't wait!
+

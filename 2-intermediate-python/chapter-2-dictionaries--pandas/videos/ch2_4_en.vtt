@@ -1,0 +1,574 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.800
+In the previous video, we created the DataFrame
+
+2
+00:00:02.800 --> 00:00:03.120
+brics
+
+3
+00:00:03.120 --> 00:00:03.120
+
+
+4
+00:00:03.120 --> 00:00:08.800
+In the previous video, we created the DataFrame brics, containing basic data on the BRICS countries.
+
+5
+00:00:08.800 --> 00:00:10.520
+Here it is again.
+
+6
+00:00:10.520 --> 00:00:15.480
+The code here makes sure that the rows and columns are given appropriate labels.
+
+7
+00:00:15.480 --> 00:00:21.320
+This is important to make accessing columns, rows and single elements in your DataFrame easy.
+
+8
+00:00:21.320 --> 00:00:26.560
+Now that's exactly what I'll show you in this video, what a coincidence!
+
+9
+00:00:26.560 --> 00:00:26.560
+
+
+10
+00:00:26.560 --> 00:00:26.560
+
+
+11
+00:00:26.560 --> 00:00:33.480
+There are numerous ways in which you can index and select data from DataFrames, so we'll take this step by step.
+
+12
+00:00:33.480 --> 00:00:39.080
+First, I'm going to talk about how to use square brackets; next, I'm going to tell
+
+13
+00:00:39.080 --> 00:00:45.080
+you about advanced data access methods, loc and iloc, that make Pandas extra powerful.
+
+14
+00:00:45.080 --> 00:00:45.880
+
+
+15
+00:00:45.880 --> 00:00:45.880
+
+
+16
+00:00:45.880 --> 00:00:51.480
+Suppose that you only want to select the country column from brics.
+
+17
+00:00:51.480 --> 00:00:54.240
+How to do this with square brackets?
+
+18
+00:00:54.240 --> 00:00:59.000
+Well, you type brics, and then the column label inside square brackets.
+
+19
+00:00:59.000 --> 00:01:03.640
+Python prints out the entire column, together with the row labels.
+
+20
+00:01:03.640 --> 00:01:05.880
+But there's something strange here.
+
+21
+00:01:05.880 --> 00:01:10.200
+The last line says Name: country, dtype: object.
+
+22
+00:01:10.200 --> 00:01:13.560
+We're clearly not dealing with a regular DataFrame here.
+
+23
+00:01:13.560 --> 00:01:16.680
+Let's find out about the type of the object that gets
+
+24
+00:01:16.680 --> 00:01:17.640
+returned, with the type function,
+
+25
+00:01:17.640 --> 00:01:17.640
+
+
+26
+00:01:17.640 --> 00:01:20.560
+with the type function, as follows.
+
+27
+00:01:20.560 --> 00:01:20.560
+
+
+28
+00:01:20.560 --> 00:01:20.560
+
+
+29
+00:01:20.560 --> 00:01:24.080
+Okay, so we're dealing with a Pandas Series here.
+
+30
+00:01:24.080 --> 00:01:27.360
+In a simplified sense, you can think of the Series as a
+
+31
+00:01:27.360 --> 00:01:31.560
+1-dimensional array that can be labeled, just like the DataFrame.
+
+32
+00:01:31.560 --> 00:01:37.520
+Otherwise put, if you paste together a bunch of Series, you can create a DataFrame.
+
+33
+00:01:37.520 --> 00:01:37.520
+
+
+34
+00:01:37.520 --> 00:01:37.520
+
+
+35
+00:01:37.520 --> 00:01:41.560
+If you want to select the country column but keep the data
+
+36
+00:01:41.560 --> 00:01:45.480
+in a DataFrame, you'll need double square brackets, like this.
+
+37
+00:01:45.480 --> 00:01:47.560
+If you check out the type of this fellow,
+
+38
+00:01:47.560 --> 00:01:47.560
+
+
+39
+00:01:47.560 --> 00:01:51.320
+it's a good old DataFrame, this time with only one column though.
+
+40
+00:01:51.320 --> 00:01:52.720
+
+
+41
+00:01:52.720 --> 00:01:52.720
+
+
+42
+00:01:52.720 --> 00:01:58.840
+You can perfectly extend this call to select two columns, country and capital, for example.
+
+43
+00:01:58.840 --> 00:01:58.840
+
+
+44
+00:01:58.840 --> 00:01:58.880
+
+
+45
+00:01:58.880 --> 00:02:04.080
+If you look at it from a different angle, you're actually putting a list with column labels inside
+
+46
+00:02:04.080 --> 00:02:11.400
+another set of square brackets, and end up with a 'sub DataFrame', containing only the country and capital columns.
+
+47
+00:02:11.400 --> 00:02:11.400
+
+
+48
+00:02:11.400 --> 00:02:11.400
+
+
+49
+00:02:11.400 --> 00:02:16.640
+You can also use the same square brackets to select rows from a DataFrame.
+
+50
+00:02:16.640 --> 00:02:16.640
+
+
+51
+00:02:16.640 --> 00:02:16.640
+
+
+52
+00:02:16.640 --> 00:02:19.280
+The way to do it is by specifying a slice.
+
+53
+00:02:19.280 --> 00:02:27.480
+To get the second, third and fourth rows of brics, we use the slice 1 colon 4.
+
+54
+00:02:27.480 --> 00:02:32.240
+Remember that the end of the slice is exclusive and that the index starts at zero.
+
+55
+00:02:32.240 --> 00:02:32.240
+
+
+56
+00:02:32.240 --> 00:02:32.240
+
+
+57
+00:02:32.240 --> 00:02:36.400
+Here are the row indexes so that you see what's happening.
+
+58
+00:02:36.400 --> 00:02:36.400
+
+
+59
+00:02:36.400 --> 00:02:36.400
+
+
+60
+00:02:36.400 --> 00:02:42.400
+These square brackets work, but it only offers limited functionality.
+
+61
+00:02:42.400 --> 00:02:46.880
+Ideally, we'd want something similar to 2D NumPy arrays.
+
+62
+00:02:46.880 --> 00:02:51.840
+There, you also used square brackets, the index or slice before the comma
+
+63
+00:02:51.840 --> 00:02:56.400
+referred to the rows, the index or slice after the comma referred to the columns.
+
+64
+00:02:56.400 --> 00:02:56.400
+
+
+65
+00:02:56.400 --> 00:02:56.400
+
+
+66
+00:02:56.400 --> 00:03:05.120
+If we want to do a similar thing with Pandas, we have to extend our toolbox with the loc and iloc functions.
+
+67
+00:03:05.120 --> 00:03:11.760
+loc is a technique to select parts of your data based on labels, iloc is position based.
+
+68
+00:03:11.760 --> 00:03:14.200
+Let's start with loc first.
+
+69
+00:03:14.200 --> 00:03:15.280
+
+
+70
+00:03:15.280 --> 00:03:15.280
+
+
+71
+00:03:15.280 --> 00:03:19.720
+Let's have another look at the brics DataFrame, and try to get the row for Russia.
+
+72
+00:03:19.720 --> 00:03:22.240
+This is how it's done.
+
+73
+00:03:22.240 --> 00:03:27.360
+You put the label of the row of interest in square brackets after loc.
+
+74
+00:03:27.360 --> 00:03:27.360
+
+
+75
+00:03:27.360 --> 00:03:27.360
+
+
+76
+00:03:27.360 --> 00:03:36.600
+Again, we get a Pandas Series, containing all the row's information, rather inconveniently shown on different lines.
+
+77
+00:03:36.600 --> 00:03:36.600
+
+
+78
+00:03:36.600 --> 00:03:36.600
+
+
+79
+00:03:36.600 --> 00:03:43.240
+To get a DataFrame, we have to put the "RU" string inside another pair of brackets.
+
+80
+00:03:43.240 --> 00:03:43.240
+
+
+81
+00:03:43.240 --> 00:03:43.240
+
+
+82
+00:03:43.240 --> 00:03:47.200
+We can also select multiple rows at the same time.
+
+83
+00:03:47.200 --> 00:03:52.000
+Suppose you want to also include India and China.
+
+84
+00:03:52.000 --> 00:03:55.800
+This will do the trick; simply add some more row labels to the list.
+
+85
+00:03:55.800 --> 00:03:55.800
+
+
+86
+00:03:55.800 --> 00:03:55.800
+
+
+87
+00:03:55.800 --> 00:04:03.640
+This was only selecting entire rows, that's something you could also do with the basic square brackets.
+
+88
+00:04:03.640 --> 00:04:11.280
+The difference here is that you can extend your selection with a comma and a specification of the columns of interest.
+
+89
+00:04:11.280 --> 00:04:11.280
+
+
+90
+00:04:11.280 --> 00:04:11.280
+
+
+91
+00:04:11.280 --> 00:04:17.440
+Let's extend the previous call to only include the country and capital columns.
+
+92
+00:04:17.440 --> 00:04:21.880
+We add a comma, and a list of column labels we want to keep.
+
+93
+00:04:21.880 --> 00:04:24.080
+The intersection gets returned.
+
+94
+00:04:24.080 --> 00:04:24.080
+
+
+95
+00:04:24.080 --> 00:04:24.080
+
+
+96
+00:04:24.080 --> 00:04:31.320
+Of course, you can also use loc to select all rows but only a specific number of columns.
+
+97
+00:04:31.320 --> 00:04:31.320
+
+
+98
+00:04:31.320 --> 00:04:31.320
+
+
+99
+00:04:31.320 --> 00:04:39.960
+Simply replace the first list that specifies the row labels with a colon, a slice going from beginning to end.
+
+100
+00:04:39.960 --> 00:04:45.880
+This time, the intersection spans all rows, but only two columns.
+
+101
+00:04:45.880 --> 00:04:45.880
+
+
+102
+00:04:45.880 --> 00:04:45.880
+
+
+103
+00:04:45.880 --> 00:04:51.480
+So, let's take a step back: simple square brackets work
+
+104
+00:04:51.480 --> 00:04:55.520
+fine if you want to get columns; to get rows, you can use slicing.
+
+105
+00:04:55.520 --> 00:05:03.520
+The loc function is more versatile: you can select rows, columns, but also rows and columns at the same time.
+
+106
+00:05:03.520 --> 00:05:11.320
+When you use loc, subsetting becomes remarkable similar to how you subsetted 2D NumPy arrays.
+
+107
+00:05:11.320 --> 00:05:18.040
+The only difference is that you use row labels with loc, not the positions of the elements.
+
+108
+00:05:18.040 --> 00:05:25.840
+If you want to subset Pandas DataFrames based on their position, or index, you'll need the iloc function.
+
+109
+00:05:25.840 --> 00:05:25.840
+
+
+110
+00:05:25.840 --> 00:05:25.840
+
+
+111
+00:05:25.840 --> 00:05:32.000
+Let's cover the same examples as with loc, and start with getting the row for Russia.
+
+112
+00:05:32.000 --> 00:05:38.080
+In loc, you use the "RU" string in double square brackets, to get a DataFrame, like here.
+
+113
+00:05:38.080 --> 00:05:41.920
+In iloc, you use the index 1 instead of RU.
+
+114
+00:05:41.920 --> 00:05:41.920
+
+
+115
+00:05:41.920 --> 00:05:41.920
+
+
+116
+00:05:41.920 --> 00:05:44.160
+The results are exactly the same.
+
+117
+00:05:44.160 --> 00:05:44.160
+
+
+118
+00:05:44.160 --> 00:05:44.160
+
+
+119
+00:05:44.160 --> 00:05:48.480
+To get the rows for Russia, India and China, which was coded
+
+120
+00:05:48.480 --> 00:05:51.440
+like this when using loc, you can now use
+
+121
+00:05:51.440 --> 00:05:51.440
+
+
+122
+00:05:51.440 --> 00:05:53.000
+a list with the index 1 to 3.
+
+123
+00:05:53.000 --> 00:05:53.000
+
+
+124
+00:05:53.000 --> 00:05:53.000
+
+
+125
+00:05:53.000 --> 00:05:55.360
+Again, the same result.
+
+126
+00:05:55.360 --> 00:05:55.360
+
+
+127
+00:05:55.360 --> 00:05:55.360
+
+
+128
+00:05:55.360 --> 00:06:01.720
+To in addition only keep the country and capital column, which we did as follows with
+
+129
+00:06:01.720 --> 00:06:02.160
+loc,
+
+130
+00:06:02.160 --> 00:06:02.160
+
+
+131
+00:06:02.160 --> 00:06:08.720
+we put the indexes 0 and 1 in a list after the comma, referring to the country and capital column.
+
+132
+00:06:08.720 --> 00:06:08.720
+
+
+133
+00:06:08.720 --> 00:06:08.720
+
+
+134
+00:06:08.720 --> 00:06:16.440
+Finally, you can keep all rows and keep only the country and capital column in a similar fashion.
+
+135
+00:06:16.440 --> 00:06:19.080
+With loc, this is how it's done.
+
+136
+00:06:19.080 --> 00:06:19.080
+
+
+137
+00:06:19.080 --> 00:06:19.080
+
+
+138
+00:06:19.080 --> 00:06:21.400
+For iloc, it's like this.
+
+139
+00:06:21.400 --> 00:06:21.400
+
+
+140
+00:06:21.400 --> 00:06:21.400
+
+
+141
+00:06:21.400 --> 00:06:27.800
+loc and iloc are pretty similar, the only difference is how you refer to columns and rows.
+
+142
+00:06:27.800 --> 00:06:36.440
+I know all of this could be a lot to take in, so lets get you coding yourself to master indexing and selecting data.
+
+143
+00:06:36.440 --> 00:06:41.640
+Keep learning by doing!
+
