@@ -1,0 +1,346 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.520
+Well done and you're on the home stretch now!
+
+2
+00:00:05.520 --> 00:00:08.640
+This chapter will be a bit different from the others.
+
+3
+00:00:08.640 --> 00:00:15.320
+Step by step, we're going to work towards a cool script, using everything we've learned during this course.
+
+4
+00:00:15.320 --> 00:00:15.360
+
+
+5
+00:00:15.360 --> 00:00:15.360
+
+
+6
+00:00:15.360 --> 00:00:18.320
+Imagine the following: you're walking up the empire state
+
+7
+00:00:18.320 --> 00:00:22.400
+building to DataCamp HeadQuarters and you're playing a game with a friend.
+
+8
+00:00:22.400 --> 00:00:22.400
+
+
+9
+00:00:22.400 --> 00:00:22.440
+
+
+10
+00:00:22.440 --> 00:00:24.800
+You throw a die one hundred times.
+
+11
+00:00:24.800 --> 00:00:24.800
+
+
+12
+00:00:24.800 --> 00:00:24.800
+
+
+13
+00:00:24.800 --> 00:00:28.360
+If it's 1 or 2 you'll go one step down.
+
+14
+00:00:28.360 --> 00:00:28.360
+
+
+15
+00:00:28.360 --> 00:00:28.360
+
+
+16
+00:00:28.360 --> 00:00:31.920
+If it's 3, 4, or 5, you'll go one step up.
+
+17
+00:00:31.920 --> 00:00:31.920
+
+
+18
+00:00:31.920 --> 00:00:31.920
+
+
+19
+00:00:31.920 --> 00:00:37.520
+If you throw a 6, you'll throw the die again and will walk up the resulting number of steps.
+
+20
+00:00:37.520 --> 00:00:37.520
+
+
+21
+00:00:37.520 --> 00:00:37.520
+
+
+22
+00:00:37.520 --> 00:00:41.160
+Of course, you can not go lower than step number 0.
+
+23
+00:00:41.160 --> 00:00:45.920
+And also, you admit that you're a bit clumsy and have a chance of 0.
+
+24
+00:00:45.920 --> 00:00:50.320
+1% of falling down the stairs when you make a move.
+
+25
+00:00:50.320 --> 00:00:54.880
+Falling down means that you have to start again from step 0.
+
+26
+00:00:54.880 --> 00:01:00.880
+With all of this in mind, you bet with your friend that you'll reach 60 steps high.
+
+27
+00:01:00.880 --> 00:01:00.880
+
+
+28
+00:01:00.880 --> 00:01:00.880
+
+
+29
+00:01:00.880 --> 00:01:04.360
+What is the chance that you will win this bet?
+
+30
+00:01:04.360 --> 00:01:06.200
+It's a complex assignment.
+
+31
+00:01:06.200 --> 00:01:11.320
+One way to solve it would be to calculate the chance analytically using equations.
+
+32
+00:01:11.320 --> 00:01:15.640
+Another possible approach, is to simulate this process thousands of
+
+33
+00:01:15.640 --> 00:01:22.120
+times, and see in what fraction of the simulations that you will reach 60 steps.
+
+34
+00:01:22.120 --> 00:01:25.480
+This is a form of -hacker statistics-.
+
+35
+00:01:25.480 --> 00:01:29.320
+As you can probably guess, we're going to opt for the second approach.
+
+36
+00:01:29.320 --> 00:01:30.240
+
+
+37
+00:01:30.240 --> 00:01:30.240
+
+
+38
+00:01:30.240 --> 00:01:35.560
+The first thing we'll need are random generators, so we can simulate the die.
+
+39
+00:01:35.560 --> 00:01:41.120
+You need to import numpy, and inside numpy, there is the random package.
+
+40
+00:01:41.120 --> 00:01:44.640
+Inside that package we find the "rand" function.
+
+41
+00:01:44.640 --> 00:01:50.360
+Let's try it out: we get a random number between zero and one.
+
+42
+00:01:50.360 --> 00:01:50.360
+
+
+43
+00:01:50.360 --> 00:01:50.360
+
+
+44
+00:01:50.360 --> 00:01:52.880
+How was this random number created?
+
+45
+00:01:52.880 --> 00:01:58.600
+Well, computers typically generate so-called pseudo-random numbers.
+
+46
+00:01:58.600 --> 00:02:04.800
+Those are random numbers that are generated using a mathematical formula, starting from a random seed.
+
+47
+00:02:04.800 --> 00:02:10.640
+This seed was chosen by Python when we called the rand function, but you can also set this manually.
+
+48
+00:02:10.640 --> 00:02:10.640
+
+
+49
+00:02:10.640 --> 00:02:11.520
+
+
+50
+00:02:11.520 --> 00:02:19.240
+Suppose we set it to 123, just a number I chose, like this, and then call the rand function twice.
+
+51
+00:02:19.240 --> 00:02:21.240
+We get two random numbers.
+
+52
+00:02:21.240 --> 00:02:21.240
+
+
+53
+00:02:21.240 --> 00:02:21.240
+
+
+54
+00:02:21.240 --> 00:02:28.280
+Now, if I set the seed back to 123, and call rand twice more, we get the exact same random numbers.
+
+55
+00:02:28.280 --> 00:02:35.920
+This is funky: you're generating random numbers, but for the same seed, you're generating the same random numbers.
+
+56
+00:02:35.920 --> 00:02:40.480
+That's why it's called pseudo-random; it's random but consistent
+
+57
+00:02:40.480 --> 00:02:46.040
+between runs; this is very useful, because this ensures "reproducibility".
+
+58
+00:02:46.040 --> 00:02:49.120
+Other people can reproduce your analysis.
+
+59
+00:02:49.120 --> 00:02:49.120
+
+
+60
+00:02:49.120 --> 00:02:49.120
+
+
+61
+00:02:49.120 --> 00:02:52.440
+Let's use this randomness in a new example now.
+
+62
+00:02:52.440 --> 00:02:53.360
+
+
+63
+00:02:53.360 --> 00:02:53.360
+
+
+64
+00:02:53.360 --> 00:02:56.080
+Suppose we want to simulate a coin toss.
+
+65
+00:02:56.080 --> 00:03:02.320
+First set the seed - again, this could be anything - and then use the randint() function.
+
+66
+00:03:02.320 --> 00:03:08.960
+To have it randomly generate either 0 or 1, we pass two arguments: the first
+
+67
+00:03:08.960 --> 00:03:15.400
+argument should be 0, the second one 2, because 2 is not going to be included.
+
+68
+00:03:15.400 --> 00:03:20.880
+If we print out coin, and then run the script, we get a random integer, 0.
+
+69
+00:03:20.880 --> 00:03:20.880
+
+
+70
+00:03:20.880 --> 00:03:20.880
+
+
+71
+00:03:20.880 --> 00:03:23.960
+You can now use this coin to play a game.
+
+72
+00:03:23.960 --> 00:03:23.960
+
+
+73
+00:03:23.960 --> 00:03:23.960
+
+
+74
+00:03:23.960 --> 00:03:31.000
+We extend the code with an if-else statement: if coin equals 0, we print out "heads".
+
+75
+00:03:31.000 --> 00:03:34.400
+If it equals 1, we print out "tails".
+
+76
+00:03:34.400 --> 00:03:34.400
+
+
+77
+00:03:34.400 --> 00:03:34.400
+
+
+78
+00:03:34.400 --> 00:03:41.560
+If we now run this script again, coin will again equal 0, because the seed is the same.
+
+79
+00:03:41.560 --> 00:03:47.320
+This also means that the if condition is True, so the string heads is printed out.
+
+80
+00:03:47.320 --> 00:03:47.320
+
+
+81
+00:03:47.320 --> 00:03:47.320
+
+
+82
+00:03:47.320 --> 00:03:51.760
+This was a first example on how you can use random numbers to
+
+83
+00:03:51.760 --> 00:03:55.840
+simulate real life situations that involve chance, or probability.
+
+84
+00:03:55.840 --> 00:03:55.840
+
+
+85
+00:03:55.840 --> 00:03:55.840
+
+
+86
+00:03:55.840 --> 00:04:05.760
+Now head over to the exercises and start to code your Empire State Building simulation!
+

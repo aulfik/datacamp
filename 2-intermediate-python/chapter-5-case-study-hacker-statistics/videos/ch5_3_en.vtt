@@ -1,0 +1,298 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:08.000
+In this last video of the course, you're ready to learn about the distribution of random walks.
+
+2
+00:00:08.000 --> 00:00:08.000
+
+
+3
+00:00:08.000 --> 00:00:08.000
+
+
+4
+00:00:08.000 --> 00:00:10.520
+Let's go back to the initial problem.
+
+5
+00:00:10.520 --> 00:00:13.160
+you throw a die one hundred times.
+
+6
+00:00:13.160 --> 00:00:17.480
+Depending on the result you go some steps up or some steps down.
+
+7
+00:00:17.480 --> 00:00:21.800
+This is called a random walk, and you know how to simulate this.
+
+8
+00:00:21.800 --> 00:00:27.800
+But you still have to answer the main question: what is the chance that you'll reach 60 steps high?
+
+9
+00:00:27.800 --> 00:00:27.800
+
+
+10
+00:00:27.800 --> 00:00:27.840
+
+
+11
+00:00:27.840 --> 00:00:29.520
+I'll give you a hint.
+
+12
+00:00:29.520 --> 00:00:32.880
+Each random walk will end up on a different step.
+
+13
+00:00:32.880 --> 00:00:38.960
+If you simulate this walk thousands of times, you will end up with thousands of final steps.
+
+14
+00:00:38.960 --> 00:00:42.280
+This is actually a distribution of final steps.
+
+15
+00:00:42.280 --> 00:00:47.400
+And once you know the distribution, you can start calculating chances.
+
+16
+00:00:47.400 --> 00:00:47.400
+
+
+17
+00:00:47.400 --> 00:00:47.400
+
+
+18
+00:00:47.400 --> 00:00:53.360
+Let's go back to the example of the total number of tails after 10 coin tosses.
+
+19
+00:00:53.360 --> 00:01:01.480
+The number of tails starts at zero and, ten times, we calculate a random number which is either 0 or 1.
+
+20
+00:01:01.480 --> 00:01:07.400
+We then update the number of times tails has been thrown by appending it to the list.
+
+21
+00:01:07.400 --> 00:01:07.400
+
+
+22
+00:01:07.400 --> 00:01:07.400
+
+
+23
+00:01:07.400 --> 00:01:10.880
+To find the distribution of this walk, we start by setting
+
+24
+00:01:10.880 --> 00:01:16.000
+a random seed, and then create an empty list named final_tails.
+
+25
+00:01:16.000 --> 00:01:19.480
+This list will contain the number of tails you end up with if
+
+26
+00:01:19.480 --> 00:01:26.320
+you play this game of tossing a coin 10 times over and over again.
+
+27
+00:01:26.320 --> 00:01:26.320
+
+
+28
+00:01:26.320 --> 00:01:26.320
+
+
+29
+00:01:26.320 --> 00:01:29.640
+Let's write a for loop that runs 100 times.
+
+30
+00:01:29.640 --> 00:01:35.920
+Inside this for loop, we put the code from before, that gradually builds up the tails list.
+
+31
+00:01:35.920 --> 00:01:40.280
+After simulating this single game, we append the last number, so
+
+32
+00:01:40.280 --> 00:01:45.640
+the number of tails after tossing 10 times, to the final_tails list.
+
+33
+00:01:45.640 --> 00:01:53.240
+Notice that the indentation here specifies that this last line is part of the top-level for loop.
+
+34
+00:01:53.240 --> 00:01:53.240
+
+
+35
+00:01:53.240 --> 00:01:53.240
+
+
+36
+00:01:53.240 --> 00:01:57.600
+If you put a last line in here to print final_tails, outside of the for
+
+37
+00:01:57.600 --> 00:02:04.840
+loops, and run the script, you see that final_tails contains numbers between 0 and 10.
+
+38
+00:02:04.840 --> 00:02:10.760
+Each number is the number of tails that were thrown in a game of 10 tosses.
+
+39
+00:02:10.760 --> 00:02:15.800
+All these values actually represent a distribution, that we can visualize.
+
+40
+00:02:15.800 --> 00:02:20.160
+Hmm, visualizing a distribution, that calls for a histogram!
+
+41
+00:02:20.160 --> 00:02:21.280
+
+
+42
+00:02:21.280 --> 00:02:21.280
+
+
+43
+00:02:21.280 --> 00:02:26.000
+On the top of the script, we add a line to import pyplot, and then, instead of
+
+44
+00:02:26.000 --> 00:02:31.760
+the print statement, we call the hist function, and specify that we want 10 bins.
+
+45
+00:02:31.760 --> 00:02:36.080
+Of course, to actually display the plot, we need plt (dot) show().
+
+46
+00:02:36.080 --> 00:02:37.120
+
+
+47
+00:02:37.120 --> 00:02:37.120
+
+
+48
+00:02:37.120 --> 00:02:43.520
+If we run the script, the resulting histogram already gives an idea, but is not very smooth yet.
+
+49
+00:02:43.520 --> 00:02:44.480
+
+
+50
+00:02:44.480 --> 00:02:44.480
+
+
+51
+00:02:44.480 --> 00:02:48.800
+Let's head back to the code, and now simulate the coin toss game
+
+52
+00:02:48.800 --> 00:02:52.600
+one thousand times, by changing the range in the top-level for loop.
+
+53
+00:02:52.600 --> 00:02:52.600
+
+
+54
+00:02:52.600 --> 00:02:52.600
+
+
+55
+00:02:52.600 --> 00:02:56.040
+This time, the histogram already looks better.
+
+56
+00:02:56.040 --> 00:02:56.040
+
+
+57
+00:02:56.040 --> 00:02:57.200
+
+
+58
+00:02:57.200 --> 00:03:01.040
+If we change the code to do ten thousand simulations,
+
+59
+00:03:01.040 --> 00:03:01.040
+
+
+60
+00:03:01.040 --> 00:03:01.480
+and run the
+
+61
+00:03:01.480 --> 00:03:06.400
+script once more, the distribution starts to converge to a bell-shape.
+
+62
+00:03:06.400 --> 00:03:09.600
+In fact, it starts to look like the theoretical distribution.
+
+63
+00:03:09.600 --> 00:03:16.240
+That means the distribution that you would find by doing analytical pen-and-paper calculations.
+
+64
+00:03:16.240 --> 00:03:20.560
+Ideally, you want to carry out the experiment zillions of times to get
+
+65
+00:03:20.560 --> 00:03:25.280
+a distribution that is exactly the same as the theoretical distribution.
+
+66
+00:03:25.280 --> 00:03:31.760
+This will take too much computer time, though, but ten thousand already gives a pretty good estimate.
+
+67
+00:03:31.760 --> 00:03:41.440
+From this curve, we can see that in around 2500 games of the 10000 games played, you end up with tails 5 times.
+
+68
+00:03:41.440 --> 00:03:41.440
+
+
+69
+00:03:41.440 --> 00:03:41.440
+
+
+70
+00:03:41.440 --> 00:03:47.200
+In the last exercises of this chapter, you will use a similar technique to
+
+71
+00:03:47.200 --> 00:03:52.000
+simulate the die rolling game in the Empire State Building over and over again.
+
+72
+00:03:52.000 --> 00:03:55.520
+Go out there, and win this thing!
+
+73
+00:03:55.520 --> 00:03:58.240
+And thank you so much for coming on this journey with me.
+
+74
+00:03:58.240 --> 00:04:05.920
+I can't wait to see what you do next with all these skills.
+
