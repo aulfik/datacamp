@@ -1,0 +1,278 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.920
+In previous videos, I gave some examples of how the NumPy array can be
+
+2
+00:00:06.920 --> 00:00:13.160
+useful to do comparison operations and boolean operations on an element-wise basis.
+
+3
+00:00:13.160 --> 00:00:17.000
+Let's now use this knowledge on the Pandas DataFrame.
+
+4
+00:00:17.000 --> 00:00:17.000
+
+
+5
+00:00:17.000 --> 00:00:17.000
+
+
+6
+00:00:17.000 --> 00:00:23.200
+For starters, let's import the BRICS dataset again from the CSV file; here it is.
+
+7
+00:00:23.200 --> 00:00:23.200
+
+
+8
+00:00:23.200 --> 00:00:23.240
+
+
+9
+00:00:23.240 --> 00:00:26.560
+Suppose you now want to keep the countries, so the observations in
+
+10
+00:00:26.560 --> 00:00:32.560
+this case, for which the area is greater than 8 million square kilometers.
+
+11
+00:00:32.560 --> 00:00:34.800
+There are three steps to this.
+
+12
+00:00:34.800 --> 00:00:38.920
+First of all, we want to get the area column from brics.
+
+13
+00:00:38.920 --> 00:00:44.480
+Next, we perform the comparison on this column and store its result.
+
+14
+00:00:44.480 --> 00:00:50.520
+Finally, we should use this result to do the appropriate selection on the DataFrame.
+
+15
+00:00:50.520 --> 00:00:50.520
+
+
+16
+00:00:50.520 --> 00:00:50.520
+
+
+17
+00:00:50.520 --> 00:00:54.080
+So the first step, getting the area column from brics.
+
+18
+00:00:54.080 --> 00:00:56.200
+There are many different ways to do this.
+
+19
+00:00:56.200 --> 00:01:01.480
+What's important here, is that we ideally get a Pandas Series, not a Pandas DataFrame.
+
+20
+00:01:01.480 --> 00:01:04.560
+Let's do this with square brackets, like this.
+
+21
+00:01:04.560 --> 00:01:09.840
+This loc alternative, and this iloc version, would also work perfectly fine.
+
+22
+00:01:09.840 --> 00:01:09.880
+
+
+23
+00:01:09.880 --> 00:01:09.880
+
+
+24
+00:01:09.880 --> 00:01:12.600
+Next, we actually perform the comparison.
+
+25
+00:01:12.600 --> 00:01:20.960
+To see which rows have an area greater than 8, we simply append greater than 8 to the code from before, like this.
+
+26
+00:01:20.960 --> 00:01:20.960
+
+
+27
+00:01:20.960 --> 00:01:20.960
+
+
+28
+00:01:20.960 --> 00:01:23.840
+Now we get a Series containing booleans.
+
+29
+00:01:23.840 --> 00:01:28.960
+If you compare it to the actual area values, you can see that the areas with a value
+
+30
+00:01:28.960 --> 00:01:35.520
+over 8 correspond to True, and the ones with a value under 8 correspond to False now.
+
+31
+00:01:35.520 --> 00:01:38.760
+Let me store this Boolean Series as is_huge.
+
+32
+00:01:38.760 --> 00:01:39.640
+
+
+33
+00:01:39.640 --> 00:01:39.640
+
+
+34
+00:01:39.640 --> 00:01:45.000
+The final step is using this boolean Series to subset the Pandas DataFrame.
+
+35
+00:01:45.000 --> 00:01:47.720
+This is something I haven't shown you yet.
+
+36
+00:01:47.720 --> 00:01:51.680
+To do this, you put is_huge inside square brackets.
+
+37
+00:01:51.680 --> 00:01:52.440
+
+
+38
+00:01:52.440 --> 00:01:52.440
+
+
+39
+00:01:52.440 --> 00:02:00.680
+The result is exactly what we want: only the countries with an area greater than 8, namely Brazil, Russia and China.
+
+40
+00:02:00.680 --> 00:02:01.600
+
+
+41
+00:02:01.600 --> 00:02:01.600
+
+
+42
+00:02:01.600 --> 00:02:07.600
+So let's summarize this: I selected the area column, performed a comparison on this
+
+43
+00:02:07.600 --> 00:02:13.760
+column and the stored it as is_huge so that I can use it to index the brics DataFrame.
+
+44
+00:02:13.760 --> 00:02:16.760
+These different commands do the trick.
+
+45
+00:02:16.760 --> 00:02:20.960
+However, we can also write this in a one-liner: simply put
+
+46
+00:02:20.960 --> 00:02:25.280
+the code that defines is_huge directly in the square brackets.
+
+47
+00:02:25.280 --> 00:02:25.800
+Great!
+
+48
+00:02:25.800 --> 00:02:27.360
+
+
+49
+00:02:27.360 --> 00:02:27.360
+
+
+50
+00:02:27.360 --> 00:02:30.880
+Now we haven't used boolean operators yet.
+
+51
+00:02:30.880 --> 00:02:34.840
+Remember that we used this logical_and function from the NumPy
+
+52
+00:02:34.840 --> 00:02:39.280
+package to do an element wise boolean operation on NumPy arrays?
+
+53
+00:02:39.280 --> 00:02:45.120
+Because Pandas is built on NumPy, you can also use that function here.
+
+54
+00:02:45.120 --> 00:02:52.360
+Suppose you only want to keep the observations that have an area between 8 and 10 million square kilometers.
+
+55
+00:02:52.360 --> 00:02:58.800
+After importing numpy as np, we can use the logical_and() function to create a Boolean Series.
+
+56
+00:02:58.800 --> 00:02:58.800
+
+
+57
+00:02:58.800 --> 00:02:58.800
+
+
+58
+00:02:58.800 --> 00:03:06.160
+The only thing left to do is placing this code inside square brackets to subset brics appropriately.
+
+59
+00:03:06.160 --> 00:03:06.160
+
+
+60
+00:03:06.160 --> 00:03:07.120
+
+
+61
+00:03:07.120 --> 00:03:11.440
+This time, only Brazil and China are included.
+
+62
+00:03:11.440 --> 00:03:16.400
+Russia has an area of 17 million square kilometers, which doesn't meet the conditions.
+
+63
+00:03:16.400 --> 00:03:17.440
+
+
+64
+00:03:17.440 --> 00:03:17.440
+
+
+65
+00:03:17.440 --> 00:03:23.240
+I hope these examples have shown you how easy it is to filter DataFrames to get interesting results.
+
+66
+00:03:23.240 --> 00:03:23.240
+
+
+67
+00:03:23.240 --> 00:03:23.240
+
+
+68
+00:03:23.240 --> 00:03:27.120
+Get some hands-on experience in the exercises yourself!
+
+69
+00:03:27.120 --> 00:03:35.720
+And I'll see you in the next chapter where we'll get even more of our control flow on.
+

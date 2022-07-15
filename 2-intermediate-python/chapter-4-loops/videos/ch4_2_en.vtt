@@ -1,0 +1,314 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.960
+Next to the while loop, Python features another type of loop as
+
+2
+00:00:03.960 --> 00:00:04.480
+well:
+
+3
+00:00:04.480 --> 00:00:04.480
+
+
+4
+00:00:04.480 --> 00:00:07.720
+You've seen the while loop and now it's time for another loop: the for loop!
+
+5
+00:00:07.720 --> 00:00:10.000
+Have a look at the for loop's recipe here:
+
+6
+00:00:10.000 --> 00:00:10.000
+
+
+7
+00:00:10.000 --> 00:00:11.440
+This can be read as:
+
+8
+00:00:11.440 --> 00:00:18.360
+for each var, a variable, in seq, a sequence, execute the expressions.
+
+9
+00:00:18.360 --> 00:00:19.880
+Makes sense?
+
+10
+00:00:19.880 --> 00:00:19.880
+
+
+11
+00:00:19.880 --> 00:00:19.880
+
+
+12
+00:00:19.880 --> 00:00:23.480
+Let's see how this actually works with an example.
+
+13
+00:00:23.480 --> 00:00:27.720
+Remember about the fam list, containing the heights of your family?
+
+14
+00:00:27.720 --> 00:00:31.600
+Here it is again, in the family (dot) py script.
+
+15
+00:00:31.600 --> 00:00:31.600
+
+
+16
+00:00:31.600 --> 00:00:31.600
+
+
+17
+00:00:31.600 --> 00:00:35.000
+Suppose that instead of a single printout of the entire list,
+
+18
+00:00:35.000 --> 00:00:39.040
+like this, we want to print out each element in the list separately.
+
+19
+00:00:39.040 --> 00:00:39.040
+
+
+20
+00:00:39.040 --> 00:00:39.040
+
+
+21
+00:00:39.040 --> 00:00:44.280
+You could do this by doing 4 print calls with the correct subsetting operations.
+
+22
+00:00:44.280 --> 00:00:44.280
+
+
+23
+00:00:44.280 --> 00:00:44.280
+
+
+24
+00:00:44.280 --> 00:00:48.760
+Instead of this repetitive and tedious approach, you can use a for loop.
+
+25
+00:00:48.760 --> 00:00:48.800
+
+
+26
+00:00:48.800 --> 00:00:48.800
+
+
+27
+00:00:48.800 --> 00:00:55.320
+Let's wipe the print calls, and start a for loop: for height in fam, followed by a colon.
+
+28
+00:00:55.320 --> 00:01:00.320
+This means that I want to execute some code for each height in the fam list.
+
+29
+00:01:00.320 --> 00:01:06.080
+Height is an arbitrary name here, I could just as well call it h or something else.
+
+30
+00:01:06.080 --> 00:01:11.040
+Inside the for loop, on every iteration, I print out the value of height.
+
+31
+00:01:11.040 --> 00:01:11.040
+
+
+32
+00:01:11.040 --> 00:01:12.240
+
+
+33
+00:01:12.240 --> 00:01:19.200
+When you run this script, Python encounters the for loop and evaluates the seq element, fam in this case.
+
+34
+00:01:19.200 --> 00:01:22.360
+It sees that it's a list containing 4 elements.
+
+35
+00:01:22.360 --> 00:01:25.160
+Then the actual iteration starts.
+
+36
+00:01:25.160 --> 00:01:25.560
+
+
+37
+00:01:25.560 --> 00:01:25.560
+
+
+38
+00:01:25.560 --> 00:01:32.560
+In the first run, Python stores the first element, so the float 1 point 73, in the variable height.
+
+39
+00:01:32.560 --> 00:01:38.400
+Next, the expression, print(height), is executed, printing out 1 point 73.
+
+40
+00:01:38.400 --> 00:01:38.400
+
+
+41
+00:01:38.400 --> 00:01:38.920
+
+
+42
+00:01:38.920 --> 00:01:42.240
+In the second iteration, Python stores the second value of
+
+43
+00:01:42.240 --> 00:01:47.440
+fam in height, being 1 point 68 now, and prints out height again.
+
+44
+00:01:47.440 --> 00:01:47.440
+
+
+45
+00:01:47.440 --> 00:01:47.440
+
+
+46
+00:01:47.440 --> 00:01:51.040
+This process continues until all heights in fam have been
+
+47
+00:01:51.040 --> 00:01:55.840
+iterated over, and we end up with 4 separate printouts, great!
+
+48
+00:01:55.840 --> 00:01:56.720
+
+
+49
+00:01:56.720 --> 00:01:56.720
+
+
+50
+00:01:56.720 --> 00:02:02.000
+In this solution, you don't have access to the index of the elements you're iterating over.
+
+51
+00:02:02.000 --> 00:02:02.000
+
+
+52
+00:02:02.000 --> 00:02:02.000
+
+
+53
+00:02:02.000 --> 00:02:06.040
+Say that, together with printing out the height, you also want to
+
+54
+00:02:06.040 --> 00:02:10.760
+display the index in the list, so that the printouts are converted to this.
+
+55
+00:02:10.760 --> 00:02:13.560
+How should the for loop be built in this case?
+
+56
+00:02:13.560 --> 00:02:13.560
+
+
+57
+00:02:13.560 --> 00:02:13.560
+
+
+58
+00:02:13.560 --> 00:02:18.320
+To achieve this, you can use enumerate().
+
+59
+00:02:18.320 --> 00:02:21.200
+Let's update the for loop definition like this.
+
+60
+00:02:21.200 --> 00:02:31.160
+Now, enumerate(fam) produces two values on each iteration: the index of the value, and the value itself.
+
+61
+00:02:31.160 --> 00:02:36.960
+Instead of a single variable height, you now write index, height.
+
+62
+00:02:36.960 --> 00:02:43.600
+Now, on each iteration, index will contain the index, and height will contain the float.
+
+63
+00:02:43.600 --> 00:02:51.320
+This means that we can now also update the statement inside the for loop with a more complicated print() call.
+
+64
+00:02:51.320 --> 00:02:57.120
+Notice that I had to convert the floats to strings with str() so that you can add everything together.
+
+65
+00:02:57.120 --> 00:03:01.320
+The printouts are exactly what we wanted, nice.
+
+66
+00:03:01.320 --> 00:03:01.320
+
+
+67
+00:03:01.320 --> 00:03:01.320
+
+
+68
+00:03:01.320 --> 00:03:05.080
+The for loop doesn't only work with lists.
+
+69
+00:03:05.080 --> 00:03:09.400
+You can also create a for loop that iterates over every character a
+
+70
+00:03:09.400 --> 00:03:14.680
+string, "family" for example, and stores it in c, one after the other.
+
+71
+00:03:14.680 --> 00:03:18.560
+Inside the loop, the string c is capitalized and printed out.
+
+72
+00:03:18.560 --> 00:03:22.320
+This time, 7 different printouts occur.
+
+73
+00:03:22.320 --> 00:03:24.920
+That's enough on the for loop for now.
+
+74
+00:03:24.920 --> 00:03:24.920
+
+
+75
+00:03:24.920 --> 00:03:24.920
+
+
+76
+00:03:24.920 --> 00:03:30.400
+In the next videos, I'll explain how you can use the for loop to iterate over other
+
+77
+00:03:30.400 --> 00:03:36.000
+data structures that you learned about by now, such as dictionaries and Pandas DataFrames.
+
+78
+00:03:36.000 --> 00:03:44.680
+But for now, let's get you coding and building some for loops of your very own.
+

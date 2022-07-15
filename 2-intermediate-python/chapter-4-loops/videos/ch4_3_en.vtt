@@ -1,0 +1,274 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:07.000
+So you already saw how looping over lists and strings works, but what
+
+2
+00:00:07.000 --> 00:00:11.520
+about those other data structures, such as dictionaries and NumPy arrays?
+
+3
+00:00:11.520 --> 00:00:17.280
+Well, in both cases, you can use a similar for loop construct, but the way you define
+
+4
+00:00:17.280 --> 00:00:23.080
+the "sequence" over which you're iterating will differ depending on the data structure.
+
+5
+00:00:23.080 --> 00:00:23.080
+
+
+6
+00:00:23.080 --> 00:00:23.080
+
+
+7
+00:00:23.080 --> 00:00:26.840
+Let's go back to our "world" dictionary, containing country
+
+8
+00:00:26.840 --> 00:00:31.080
+names as keys and corresponding populations as values, shown here.
+
+9
+00:00:31.080 --> 00:00:31.880
+
+
+10
+00:00:31.880 --> 00:00:31.880
+
+
+11
+00:00:31.880 --> 00:00:35.600
+How should we approach this if we want to print out the key
+
+12
+00:00:35.600 --> 00:00:40.080
+and corresponding value for each key:value pair on a new line?
+
+13
+00:00:40.080 --> 00:00:44.640
+Maybe like this, simply hoping that the key and value are correctly set?
+
+14
+00:00:44.640 --> 00:00:44.680
+
+
+15
+00:00:44.680 --> 00:00:44.680
+
+
+16
+00:00:44.680 --> 00:00:48.000
+Unfortunately, we get an error.
+
+17
+00:00:48.000 --> 00:00:54.520
+Python sees that you expect two values in every iteration, like enumerate did before when you
+
+18
+00:00:54.520 --> 00:01:01.800
+wanted the index and value from a list element, but in this case, Python has no idea how to go about this.
+
+19
+00:01:01.800 --> 00:01:01.800
+
+
+20
+00:01:01.800 --> 00:01:02.560
+
+
+21
+00:01:02.560 --> 00:01:06.840
+We can fix this by calling the method items() on world.
+
+22
+00:01:06.840 --> 00:01:10.840
+This will generate a key and value in each iteration.
+
+23
+00:01:10.840 --> 00:01:10.840
+
+
+24
+00:01:10.840 --> 00:01:10.880
+
+
+25
+00:01:10.880 --> 00:01:13.400
+If you have a look at the printout, there's something
+
+26
+00:01:13.400 --> 00:01:19.440
+strange: afghanistan comes first in world, but not in the printout.
+
+27
+00:01:19.440 --> 00:01:23.600
+That's because dictionaries are inherently unordered: the order
+
+28
+00:01:23.600 --> 00:01:27.800
+in which they're iterated over is not fixed, at least in Python 3.
+
+29
+00:01:27.800 --> 00:01:29.240
+5.
+
+30
+00:01:29.240 --> 00:01:29.240
+
+
+31
+00:01:29.240 --> 00:01:29.240
+
+
+32
+00:01:29.240 --> 00:01:36.400
+The names key and value are totally arbitrary by the way, I can also call these k and v, like here.
+
+33
+00:01:36.400 --> 00:01:37.960
+The order does matter though.
+
+34
+00:01:37.960 --> 00:01:42.320
+The first variable gets the key, the second one the value.
+
+35
+00:01:42.320 --> 00:01:42.320
+
+
+36
+00:01:42.320 --> 00:01:42.320
+
+
+37
+00:01:42.320 --> 00:01:48.400
+Now for the NumPy array, that "data science equivalent" of the Python list I've been talking about quite a bit.
+
+38
+00:01:48.400 --> 00:01:53.040
+Let's start from the bmi array that you already know -- here it is.
+
+39
+00:01:53.040 --> 00:01:53.040
+
+
+40
+00:01:53.040 --> 00:01:53.040
+
+
+41
+00:01:53.040 --> 00:01:59.080
+It's pretty straightforward: the most basic for loop you can imagine already does the trick.
+
+42
+00:01:59.080 --> 00:01:59.080
+
+
+43
+00:01:59.080 --> 00:01:59.080
+
+
+44
+00:01:59.080 --> 00:02:02.440
+Let's see if this also works with a 2D NumPy array.
+
+45
+00:02:02.440 --> 00:02:08.320
+Here, I created meas, by combining the np_height and np_weight arrays.
+
+46
+00:02:08.320 --> 00:02:09.000
+
+
+47
+00:02:09.000 --> 00:02:09.000
+
+
+48
+00:02:09.000 --> 00:02:15.320
+If we want to print out each element in this 2D array separately, the same basic for loop won't do the trick though.
+
+49
+00:02:15.320 --> 00:02:15.320
+
+
+50
+00:02:15.320 --> 00:02:15.800
+
+
+51
+00:02:15.800 --> 00:02:20.800
+The 2D array is actually built up from an array of 1D arrays.
+
+52
+00:02:20.800 --> 00:02:24.960
+The for loop simply prints out an entire array on each iteration.
+
+53
+00:02:24.960 --> 00:02:24.960
+
+
+54
+00:02:24.960 --> 00:02:24.960
+
+
+55
+00:02:24.960 --> 00:02:31.400
+To get every element of an array, you can use a NumPy function called nditer().
+
+56
+00:02:31.400 --> 00:02:35.760
+The input is the array you want to iterate over, meas in our case.
+
+57
+00:02:35.760 --> 00:02:41.120
+This time, we get 10 printouts, first all the heights, then all the weights.
+
+58
+00:02:41.120 --> 00:02:41.880
+Nice!
+
+59
+00:02:41.880 --> 00:02:41.880
+
+
+60
+00:02:41.880 --> 00:02:41.880
+
+
+61
+00:02:41.880 --> 00:02:45.160
+To recap: if you want to iterate over key-value
+
+62
+00:02:45.160 --> 00:02:51.360
+pairs in a dictionary, use the items() method on the dictionary to define the sequence in the for loop.
+
+63
+00:02:51.360 --> 00:02:54.480
+If you want to iterate over all elements in a NumPy array,
+
+64
+00:02:54.480 --> 00:02:58.240
+you should use the nditer() function to specify the sequence.
+
+65
+00:02:58.240 --> 00:03:04.200
+Pay attention here: dictionaries require a method, NumPy arrays use a function.
+
+66
+00:03:04.200 --> 00:03:04.200
+
+
+67
+00:03:04.200 --> 00:03:04.200
+
+
+68
+00:03:04.200 --> 00:03:13.040
+Before you get confused, head over to some exercises and enhance your looping skills!
+

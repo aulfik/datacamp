@@ -1,0 +1,310 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.080
+So you know about comparison operators now,
+
+2
+00:00:05.080 --> 00:00:05.080
+
+
+3
+00:00:05.080 --> 00:00:06.320
+such as less
+
+4
+00:00:06.320 --> 00:00:14.320
+than and greater than, and you also know how to combine the boolean results, using boolean operators such as and and or.
+
+5
+00:00:14.320 --> 00:00:14.320
+
+
+6
+00:00:14.320 --> 00:00:14.320
+
+
+7
+00:00:14.320 --> 00:00:20.600
+Things get really interesting when you can actually use these concepts to change how your program behaves.
+
+8
+00:00:20.600 --> 00:00:26.040
+Depending on the outcome of your comparisons, you might want your Python code to behave differently.
+
+9
+00:00:26.040 --> 00:00:32.320
+You can do this with conditional statements in Python: if, else and elif.
+
+10
+00:00:32.320 --> 00:00:32.320
+
+
+11
+00:00:32.320 --> 00:00:32.320
+
+
+12
+00:00:32.320 --> 00:00:34.560
+Let's start working in a script, control.
+
+13
+00:00:34.560 --> 00:00:35.680
+py.
+
+14
+00:00:35.680 --> 00:00:38.680
+Suppose you have a variable z, equal to 4.
+
+15
+00:00:38.680 --> 00:00:42.680
+If the value is even, you want to print out: "z is even".
+
+16
+00:00:42.680 --> 00:00:44.640
+This code does the trick.
+
+17
+00:00:44.640 --> 00:00:48.960
+modulo operator 2 will return 0 if z is even.
+
+18
+00:00:48.960 --> 00:00:48.960
+
+
+19
+00:00:48.960 --> 00:00:48.960
+
+
+20
+00:00:48.960 --> 00:00:53.680
+If you run this, Python checks if the condition holds.
+
+21
+00:00:53.680 --> 00:01:00.800
+It's true, so the corresponding code is executed: "z is even" gets printed out.
+
+22
+00:01:00.800 --> 00:01:00.800
+
+
+23
+00:01:00.800 --> 00:01:00.800
+
+
+24
+00:01:00.800 --> 00:01:05.320
+Let's compare this to the general recipe for an if statement.
+
+25
+00:01:05.320 --> 00:01:05.320
+
+
+26
+00:01:05.320 --> 00:01:05.320
+
+
+27
+00:01:05.320 --> 00:01:10.920
+It reads as follows: if condition, execute expression.
+
+28
+00:01:10.920 --> 00:01:14.760
+Notice the colon at the end, and the fact that you simply
+
+29
+00:01:14.760 --> 00:01:22.080
+have to indent the Python code with four spaces (or a tab) to tell Python what to do in the case the condition succeeds.
+
+30
+00:01:22.080 --> 00:01:22.080
+
+
+31
+00:01:22.080 --> 00:01:22.080
+
+
+32
+00:01:22.080 --> 00:01:26.600
+To exit the if statement, simply continue with some Python code
+
+33
+00:01:26.600 --> 00:01:33.280
+without indentation, and Python will know that it's not part of the if statement.
+
+34
+00:01:33.280 --> 00:01:33.280
+
+
+35
+00:01:33.280 --> 00:01:33.280
+
+
+36
+00:01:33.280 --> 00:01:38.920
+It's perfectly possible to have more lines inside the if statement, like this for example.
+
+37
+00:01:38.920 --> 00:01:42.360
+The script now prints out two lines if you run it.
+
+38
+00:01:42.360 --> 00:01:42.360
+
+
+39
+00:01:42.360 --> 00:01:42.360
+
+
+40
+00:01:42.360 --> 00:01:46.160
+If the condition does not pass, the expression is not executed.
+
+41
+00:01:46.160 --> 00:01:46.720
+
+
+42
+00:01:46.720 --> 00:01:46.720
+
+
+43
+00:01:46.720 --> 00:01:51.720
+You can see this if we change z to be 5 and rerun the code: there's no output.
+
+44
+00:01:51.720 --> 00:01:51.720
+
+
+45
+00:01:51.720 --> 00:01:51.720
+
+
+46
+00:01:51.720 --> 00:01:57.280
+Suppose now that you want to print out "z is odd" in this case.
+
+47
+00:01:57.280 --> 00:01:58.880
+How to do this?
+
+48
+00:01:58.880 --> 00:01:59.360
+
+
+49
+00:01:59.360 --> 00:01:59.360
+
+
+50
+00:01:59.360 --> 00:02:03.400
+Well, you can simply use an else statement, like this.
+
+51
+00:02:03.400 --> 00:02:11.880
+If we run it with z equal to 5, the condition is not true, so the expression for the else statement gets printed out.
+
+52
+00:02:11.880 --> 00:02:18.320
+The general recipe looks like this: for the else statement, you don't need to specify a condition.
+
+53
+00:02:18.320 --> 00:02:24.720
+The corresponding expression gets run if the condition of the if statement it belongs to does not hold.
+
+54
+00:02:24.720 --> 00:02:24.720
+
+
+55
+00:02:24.720 --> 00:02:25.880
+
+
+56
+00:02:25.880 --> 00:02:29.960
+You can think of cases where even more customized behavior is necessary.
+
+57
+00:02:29.960 --> 00:02:35.400
+Say you want different printouts for numbers that are divisible by 2 and by 3.
+
+58
+00:02:35.400 --> 00:02:38.320
+You can throw some elifs in there to get the job done.
+
+59
+00:02:38.320 --> 00:02:39.840
+Take this example.
+
+60
+00:02:39.840 --> 00:02:39.840
+
+
+61
+00:02:39.840 --> 00:02:39.840
+
+
+62
+00:02:39.840 --> 00:02:44.200
+Can you tell what this script will print out if you run it?
+
+63
+00:02:44.200 --> 00:02:49.840
+If z equals 3, the first condition is False, so it goes over to the next condition.
+
+64
+00:02:49.840 --> 00:02:54.160
+This condition, does hold, so the corresponding print statement is executed.
+
+65
+00:02:54.160 --> 00:02:54.160
+
+
+66
+00:02:54.160 --> 00:02:55.000
+
+
+67
+00:02:55.000 --> 00:02:57.720
+Suppose now that z equals 6.
+
+68
+00:02:57.720 --> 00:03:00.880
+Both the if and elif conditions hold in this case.
+
+69
+00:03:00.880 --> 00:03:02.960
+Will two printouts occur?
+
+70
+00:03:02.960 --> 00:03:04.000
+Nope.
+
+71
+00:03:04.000 --> 00:03:08.880
+As soon as Python bumps into a condition that is true, it executes
+
+72
+00:03:08.880 --> 00:03:13.160
+the corresponding code and then leaves the control structure after that.
+
+73
+00:03:13.160 --> 00:03:19.480
+This means the second condition, corresponding to the elif, is never reached so there's no corresponding printout.
+
+74
+00:03:19.480 --> 00:03:19.480
+
+
+75
+00:03:19.480 --> 00:03:19.480
+
+
+76
+00:03:19.480 --> 00:03:25.680
+Control flow can be extremely powerful when you're writing your own Python scripts.
+
+77
+00:03:25.680 --> 00:03:32.040
+Get some practice with it in the exercises!
+

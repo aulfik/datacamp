@@ -1,0 +1,254 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.480
+Welcome back, budding Pythonistas!
+
+2
+00:00:05.480 --> 00:00:08.720
+You have already learned a bit about different Python types.
+
+3
+00:00:08.720 --> 00:00:08.720
+
+
+4
+00:00:08.720 --> 00:00:08.720
+
+
+5
+00:00:08.720 --> 00:00:12.000
+Among those was bool, short for boolean.
+
+6
+00:00:12.000 --> 00:00:15.280
+Do you remember the bmi array from the intro course?
+
+7
+00:00:15.280 --> 00:00:16.880
+Here it is again.
+
+8
+00:00:16.880 --> 00:00:23.040
+Using the greater than sign, we could find out which values in bmi were above 23.
+
+9
+00:00:23.040 --> 00:00:28.640
+Next, I used the resulting Boolean array to actually select that value.
+
+10
+00:00:28.640 --> 00:00:28.640
+
+
+11
+00:00:28.640 --> 00:00:28.640
+
+
+12
+00:00:28.640 --> 00:00:36.200
+In this video, we'll dive a little deeper into the world of comparison operators, like this greater than sign.
+
+13
+00:00:36.200 --> 00:00:44.600
+Comparison operators are operators that can tell how two Python values relate, and result in a boolean.
+
+14
+00:00:44.600 --> 00:00:44.600
+
+
+15
+00:00:44.600 --> 00:00:44.600
+
+
+16
+00:00:44.600 --> 00:00:48.480
+In the simplest sense, you can use these operators on numbers.
+
+17
+00:00:48.480 --> 00:00:53.280
+Say, for example, that you want to check if 2 is smaller than 3.
+
+18
+00:00:53.280 --> 00:00:57.920
+You type 2 less than sign 3, and hit Enter.
+
+19
+00:00:57.920 --> 00:01:01.520
+Because this is the case, you get True.
+
+20
+00:01:01.520 --> 00:01:06.000
+You can also check if two values are equal, with a double equals sign.
+
+21
+00:01:06.000 --> 00:01:12.560
+From this call, we see that 2 equals equals 3 gives us False.
+
+22
+00:01:12.560 --> 00:01:16.040
+Makes sense, because 2 is not equal to 3.
+
+23
+00:01:16.040 --> 00:01:19.640
+You can also make a combination of equality and smaller than.
+
+24
+00:01:19.640 --> 00:01:24.720
+Have a look at this command that checks if 2 is smaller than or equal to 3.
+
+25
+00:01:24.720 --> 00:01:30.720
+It's TRUE, but also 3 smaller than or equal to 3 is True.
+
+26
+00:01:30.720 --> 00:01:30.720
+
+
+27
+00:01:30.720 --> 00:01:30.760
+
+
+28
+00:01:30.760 --> 00:01:34.720
+Of course, you can also use comparison operators directly on
+
+29
+00:01:34.720 --> 00:01:39.600
+variables that represent these integers, like I did in this example.
+
+30
+00:01:39.600 --> 00:01:39.600
+
+
+31
+00:01:39.600 --> 00:01:39.600
+
+
+32
+00:01:39.600 --> 00:01:43.080
+All these operators also work for strings.
+
+33
+00:01:43.080 --> 00:01:46.800
+Let's check if "carl" is smaller than "chris".
+
+34
+00:01:46.800 --> 00:01:46.800
+
+
+35
+00:01:46.800 --> 00:01:46.800
+
+
+36
+00:01:46.800 --> 00:01:52.640
+According to the alphabet, carl comes before chris, so the result is True.
+
+37
+00:01:52.640 --> 00:01:57.000
+Do you think that comparing a string and an integer can work?
+
+38
+00:01:57.000 --> 00:02:02.840
+Let's try to see if the integer 3 is smaller than the string chris.
+
+39
+00:02:02.840 --> 00:02:02.840
+
+
+40
+00:02:02.840 --> 00:02:02.840
+
+
+41
+00:02:02.840 --> 00:02:03.600
+We get an error.
+
+42
+00:02:03.600 --> 00:02:10.000
+Typically, Python can't tell how two objects with different types relate.
+
+43
+00:02:10.000 --> 00:02:18.160
+Different numeric types, such as floats and integers, are exceptions as this example shows: no error this time.
+
+44
+00:02:18.160 --> 00:02:23.320
+In general, always make sure that you make comparisons between objects of the same type.
+
+45
+00:02:23.320 --> 00:02:24.200
+
+
+46
+00:02:24.200 --> 00:02:24.200
+
+
+47
+00:02:24.200 --> 00:02:28.040
+Another exception arises when we move back to the example we
+
+48
+00:02:28.040 --> 00:02:33.640
+started with, where we compared the NumPy array, bmi, with an integer, 23.
+
+49
+00:02:33.640 --> 00:02:36.200
+This works perfectly.
+
+50
+00:02:36.200 --> 00:02:44.360
+NumPy figures out that you want to compare every element in bmi with 23, and returns corresponding booleans.
+
+51
+00:02:44.360 --> 00:02:49.640
+Behind the scenes, NumPy builds a numpy array of the same size
+
+52
+00:02:49.640 --> 00:02:54.240
+filled with the number 23, and then performs an element-wise comparison.
+
+53
+00:02:54.240 --> 00:03:00.400
+This is concise yet very efficient code, something data scientists love!
+
+54
+00:03:00.400 --> 00:03:00.400
+
+
+55
+00:03:00.400 --> 00:03:00.400
+
+
+56
+00:03:00.400 --> 00:03:06.440
+Have a look at this table that summarizes all comparison operators.
+
+57
+00:03:06.440 --> 00:03:08.600
+You already know about some of these.
+
+58
+00:03:08.600 --> 00:03:12.400
+They're all pretty straightforward, except for the last one maybe.
+
+59
+00:03:12.400 --> 00:03:18.280
+The exclamation mark followed by an equals sign stands for inequality.
+
+60
+00:03:18.280 --> 00:03:21.560
+It's basically the opposite of equality.
+
+61
+00:03:21.560 --> 00:03:21.560
+
+
+62
+00:03:21.560 --> 00:03:21.840
+
+
+63
+00:03:21.840 --> 00:03:29.200
+Now head over to the exercises and train your comparison skills!
+

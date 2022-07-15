@@ -1,0 +1,274 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.440
+You're doing great!
+
+2
+00:00:02.440 --> 00:00:10.960
+And now that you can produce booleans by performing comparison operations, the next step is combining these booleans.
+
+3
+00:00:10.960 --> 00:00:11.400
+
+
+4
+00:00:11.400 --> 00:00:11.400
+
+
+5
+00:00:11.400 --> 00:00:14.160
+You can use boolean operators for this.
+
+6
+00:00:14.160 --> 00:00:18.760
+The three most common ones are and, or, and not.
+
+7
+00:00:18.760 --> 00:00:18.760
+
+
+8
+00:00:18.760 --> 00:00:18.760
+
+
+9
+00:00:18.760 --> 00:00:22.200
+The and operator works just as you would expect.
+
+10
+00:00:22.200 --> 00:00:28.240
+It takes two booleans and returns True only if both the booleans themselves are True.
+
+11
+00:00:28.240 --> 00:00:32.680
+This means that True and True evaluates True, but False and
+
+12
+00:00:32.680 --> 00:00:38.080
+True, True and False and False and False all evaluate to False.
+
+13
+00:00:38.080 --> 00:00:38.080
+
+
+14
+00:00:38.080 --> 00:00:39.080
+
+
+15
+00:00:39.080 --> 00:00:43.680
+Instead of using booleans, we can of course use the results of comparisons.
+
+16
+00:00:43.680 --> 00:00:46.960
+Suppose we have a variable x, equal to 12.
+
+17
+00:00:46.960 --> 00:00:57.480
+To check if this variable is greater than 5 but less than 15, we can use x greater than 5 and x less than 15.
+
+18
+00:00:57.480 --> 00:01:01.600
+As you already learned, the first part will evaluate to True.
+
+19
+00:01:01.600 --> 00:01:04.880
+The second part, will also evaluate to True.
+
+20
+00:01:04.880 --> 00:01:10.400
+So the result of this expression, True and True, is True.
+
+21
+00:01:10.400 --> 00:01:14.480
+This makes sense, because 12 lies between 5 and 15.
+
+22
+00:01:14.480 --> 00:01:16.160
+
+
+23
+00:01:16.160 --> 00:01:16.160
+
+
+24
+00:01:16.160 --> 00:01:23.960
+The or operator works similarly, but the difference is that only at least one of the booleans it uses should be True.
+
+25
+00:01:23.960 --> 00:01:32.880
+This means that, True or True equals True, but that also False or True and True or False evaluate to True.
+
+26
+00:01:32.880 --> 00:01:36.720
+Only False or False results in False.
+
+27
+00:01:36.720 --> 00:01:41.240
+Also here you can make combinations with variables, like this example
+
+28
+00:01:41.240 --> 00:01:49.440
+that checks if a variable y, which is equal to 5, is less than 7 or above 13.
+
+29
+00:01:49.440 --> 00:01:55.120
+5 less than 7 is True, 5 greater than 13 is False.
+
+30
+00:01:55.120 --> 00:01:57.880
+The or operation thus returns True.
+
+31
+00:01:57.880 --> 00:01:57.880
+
+
+32
+00:01:57.880 --> 00:01:59.160
+
+
+33
+00:01:59.160 --> 00:02:02.200
+Finally, there's the not operator.
+
+34
+00:02:02.200 --> 00:02:05.360
+It simply negates the boolean value you use it on.
+
+35
+00:02:05.360 --> 00:02:08.760
+not True is False, not False is True.
+
+36
+00:02:08.760 --> 00:02:12.600
+The not operation is typically useful if you're combining different boolean
+
+37
+00:02:12.600 --> 00:02:19.440
+operations and then want to negate that result; you'll see some examples in the exercises.
+
+38
+00:02:19.440 --> 00:02:19.440
+
+
+39
+00:02:19.440 --> 00:02:19.440
+
+
+40
+00:02:19.440 --> 00:02:23.240
+Now, for NumPy arrays, things are different.
+
+41
+00:02:23.240 --> 00:02:27.280
+Retaking the bmi example from the intro course, we can try
+
+42
+00:02:27.280 --> 00:02:32.000
+to find out which bmis are higher than 21, but lower than 22.
+
+43
+00:02:32.000 --> 00:02:39.120
+The output of bmi greater than 21 is easily found, so is the one for the bmi lower than 22.
+
+44
+00:02:39.120 --> 00:02:44.720
+Let's now try to combine those with the and operator I just introduced.
+
+45
+00:02:44.720 --> 00:02:44.720
+
+
+46
+00:02:44.720 --> 00:02:44.720
+
+
+47
+00:02:44.720 --> 00:02:46.880
+Oops, an error.
+
+48
+00:02:46.880 --> 00:02:51.800
+The truth value of an array with more than one element is ambiguous.
+
+49
+00:02:51.800 --> 00:02:55.200
+and clearly doesn't like an array of booleans to work on.
+
+50
+00:02:55.200 --> 00:02:55.200
+
+
+51
+00:02:55.200 --> 00:02:55.200
+
+
+52
+00:02:55.200 --> 00:02:59.240
+After some digging in the numpy documentation, you can find the functions
+
+53
+00:02:59.240 --> 00:03:08.200
+logical_and, logical_or and logical_not, the "array equivalents" of and or and not.
+
+54
+00:03:08.200 --> 00:03:13.800
+To find out which bmis are between 21 and 22, we thus need this call.
+
+55
+00:03:13.800 --> 00:03:13.800
+
+
+56
+00:03:13.800 --> 00:03:14.400
+
+
+57
+00:03:14.400 --> 00:03:22.240
+Again, as we expect from NumPy, the and operation is performed element-wise: True and True
+
+58
+00:03:22.240 --> 00:03:30.200
+give True, like these ones, but False and True or True and False give False, like for these elements.
+
+59
+00:03:30.200 --> 00:03:30.200
+
+
+60
+00:03:30.200 --> 00:03:30.200
+
+
+61
+00:03:30.200 --> 00:03:38.600
+To actually select only these bmis from the bmi array, we can use the resulting array of booleans in square brackets.
+
+62
+00:03:38.600 --> 00:03:45.040
+Again, NumPy wins when it comes to writing short yet very expressive Python code.
+
+63
+00:03:45.040 --> 00:03:49.080
+I can hear you asking, "Cool, but how does this work for
+
+64
+00:03:49.080 --> 00:03:53.000
+Pandas DataFrames, the de facto standard for dataset manipulation?"
+
+65
+00:03:53.000 --> 00:03:56.200
+That's something you'll find out later in this chapter.
+
+66
+00:03:56.200 --> 00:03:56.200
+
+
+67
+00:03:56.200 --> 00:03:56.960
+
+
+68
+00:03:56.960 --> 00:04:05.160
+First try to ace the exercises that follow, and I'll see you in the next video!
+
