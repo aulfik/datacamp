@@ -1,0 +1,394 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.800
+Hi!
+
+2
+00:00:02.800 --> 00:00:07.760
+My name is Hugo, and I'm a data scientist and educator at DataCamp.
+
+3
+00:00:07.760 --> 00:00:11.360
+I'm also the host of the weekly podcast DataFramed, which you need to
+
+4
+00:00:11.360 --> 00:00:15.640
+check out to stay up to date with everything that's happening in data science.
+
+5
+00:00:15.640 --> 00:00:18.760
+In this intermediate Python course, you're going to take your
+
+6
+00:00:18.760 --> 00:00:22.720
+Python skills to the next level, specifically for data science.
+
+7
+00:00:22.720 --> 00:00:22.960
+
+
+8
+00:00:22.960 --> 00:00:22.960
+
+
+9
+00:00:22.960 --> 00:00:28.000
+You will learn how to visualize data and to store data in new data structures.
+
+10
+00:00:28.000 --> 00:00:31.400
+Along the way, you will master control structures, which you
+
+11
+00:00:31.400 --> 00:00:35.160
+will need to customize the flow of your scripts and algorithms.
+
+12
+00:00:35.160 --> 00:00:39.200
+These are the types of things data scientists use every day.
+
+13
+00:00:39.200 --> 00:00:42.480
+We'll finish this chapter with a case study, where you'll blend
+
+14
+00:00:42.480 --> 00:00:46.040
+together everything you've learned to solve an exciting challenge.
+
+15
+00:00:46.040 --> 00:00:46.040
+
+
+16
+00:00:46.040 --> 00:00:47.000
+
+
+17
+00:00:47.000 --> 00:00:54.400
+This first chapter is about data visualization, which is a very important part of data analysis.
+
+18
+00:00:54.400 --> 00:00:57.560
+First of all, you will use it to explore your dataset.
+
+19
+00:00:57.560 --> 00:01:02.320
+The better you understand your data, the better you'll be able to extract insights.
+
+20
+00:01:02.320 --> 00:01:05.320
+And once you've found those insights, again, you'll need
+
+21
+00:01:05.320 --> 00:01:09.960
+visualization to be able to share your valuable insights with other people.
+
+22
+00:01:09.960 --> 00:01:10.200
+
+
+23
+00:01:10.200 --> 00:01:10.200
+
+
+24
+00:01:10.200 --> 00:01:13.920
+As an example, have a look at this beautiful plot.
+
+25
+00:01:13.920 --> 00:01:13.920
+
+
+26
+00:01:13.920 --> 00:01:13.960
+
+
+27
+00:01:13.960 --> 00:01:18.680
+It's made by the late, the great Swedish professor Hans Rosling.
+
+28
+00:01:18.680 --> 00:01:23.200
+His talks about global development have been viewed millions of times.
+
+29
+00:01:23.200 --> 00:01:30.360
+And what makes them so intriguing, is that by making beautiful plots, he allows the data to tell their own story.
+
+30
+00:01:30.360 --> 00:01:34.800
+Here we see a bubble chart, where each bubble represents a country.
+
+31
+00:01:34.800 --> 00:01:41.520
+The bigger the bubble, the bigger the country's population, so the two biggest bubbles here are China and India.
+
+32
+00:01:41.520 --> 00:01:41.520
+
+
+33
+00:01:41.520 --> 00:01:42.480
+
+
+34
+00:01:42.480 --> 00:01:43.800
+There are 2 axes.
+
+35
+00:01:43.800 --> 00:01:44.400
+
+
+36
+00:01:44.400 --> 00:01:44.400
+
+
+37
+00:01:44.400 --> 00:01:48.760
+The horizontal axis shows the GDP per capita, in US dollars.
+
+38
+00:01:48.760 --> 00:01:48.760
+
+
+39
+00:01:48.760 --> 00:01:48.760
+
+
+40
+00:01:48.760 --> 00:01:53.200
+The vertical axis shows life expectancy.
+
+41
+00:01:53.200 --> 00:01:58.640
+We clearly see that people live longer in countries with a higher GDP per capita.
+
+42
+00:01:58.640 --> 00:02:03.920
+Still, there is a huge difference in life expectancy between countries on the same income level.
+
+43
+00:02:03.920 --> 00:02:04.960
+
+
+44
+00:02:04.960 --> 00:02:04.960
+
+
+45
+00:02:04.960 --> 00:02:07.280
+Now why am I telling you this?
+
+46
+00:02:07.280 --> 00:02:12.880
+Well, because by the end of this chapter, you'll be able to build this beautiful plot yourself!
+
+47
+00:02:12.880 --> 00:02:12.880
+
+
+48
+00:02:12.880 --> 00:02:12.880
+
+
+49
+00:02:12.880 --> 00:02:19.640
+There are many visualization packages in python, but the mother of them all, is matplotlib.
+
+50
+00:02:19.640 --> 00:02:21.640
+You will need its subpackage pyplot.
+
+51
+00:02:21.640 --> 00:02:26.960
+By convention, this subpackage is imported as plt, like this.
+
+52
+00:02:26.960 --> 00:02:26.960
+
+
+53
+00:02:26.960 --> 00:02:26.960
+
+
+54
+00:02:26.960 --> 00:02:34.360
+For our first example, let's try to gain some insights in the evolution of the world population.
+
+55
+00:02:34.360 --> 00:02:41.440
+I have a list with years here, year, and a list with corresponding populations, expressed in billions, pop.
+
+56
+00:02:41.440 --> 00:02:45.480
+In the year 1970, for example, 3.
+
+57
+00:02:45.480 --> 00:02:47.880
+7 billion people lived on planet Earth.
+
+58
+00:02:47.880 --> 00:02:47.880
+
+
+59
+00:02:47.880 --> 00:02:47.880
+
+
+60
+00:02:47.880 --> 00:02:55.480
+To plot this data as a line chart, we call plt-dot-plot and use our two lists as arguments.
+
+61
+00:02:55.480 --> 00:03:02.360
+The first argument corresponds to the horizontal axis, and the second one to the vertical axis.
+
+62
+00:03:02.360 --> 00:03:06.280
+You might think that a plot will pop up right now, but Python's pretty lazy.
+
+63
+00:03:06.280 --> 00:03:09.480
+It will wait for the show function to actually display the plot.
+
+64
+00:03:09.480 --> 00:03:12.360
+This is because you might want to add some extra ingredients to your
+
+65
+00:03:12.360 --> 00:03:17.800
+plot before actually displaying it, such as titles and label customizations.
+
+66
+00:03:17.800 --> 00:03:20.200
+I'll talk about that some more later on.
+
+67
+00:03:20.200 --> 00:03:27.440
+Just remember this: the plot function tells Python what to plot and how to plot it.
+
+68
+00:03:27.440 --> 00:03:29.720
+show actually displays the plot.
+
+69
+00:03:29.720 --> 00:03:29.720
+
+
+70
+00:03:29.720 --> 00:03:30.800
+
+
+71
+00:03:30.800 --> 00:03:33.760
+When we look at our plot, we see that the years are indeed
+
+72
+00:03:33.760 --> 00:03:38.000
+shown on the horizontal axis, and the populations on the vertical axis.
+
+73
+00:03:38.000 --> 00:03:38.000
+
+
+74
+00:03:38.000 --> 00:03:38.600
+
+
+75
+00:03:38.600 --> 00:03:43.120
+There are four data points, and Python draws a line between them.
+
+76
+00:03:43.120 --> 00:03:47.160
+In 1950, the world population was around 2 point 5 billion.
+
+77
+00:03:47.160 --> 00:03:50.400
+In 2010, it was around 7 billion.
+
+78
+00:03:50.400 --> 00:03:54.280
+So the world population has almost tripled in sixty years.
+
+79
+00:03:54.280 --> 00:03:59.160
+What if the population keeps on growing like that?
+
+80
+00:03:59.160 --> 00:04:00.800
+Will the world become over populated?
+
+81
+00:04:00.800 --> 00:04:03.400
+You'll find out in the exercises.
+
+82
+00:04:03.400 --> 00:04:04.520
+
+
+83
+00:04:04.520 --> 00:04:04.520
+
+
+84
+00:04:04.520 --> 00:04:08.240
+Let me first introduce you to another type of plot: the scatter plot.
+
+85
+00:04:08.240 --> 00:04:11.760
+To create it, we can start from the code from before.
+
+86
+00:04:11.760 --> 00:04:15.400
+This time, though, you change the plot function to scatter.
+
+87
+00:04:15.400 --> 00:04:15.400
+
+
+88
+00:04:15.400 --> 00:04:15.400
+
+
+89
+00:04:15.400 --> 00:04:23.600
+The resulting scatter plot simply plots all the individual data points; Python doesn't connect the dots with a line.
+
+90
+00:04:23.600 --> 00:04:27.440
+For many applications, the scatter plot is often a better
+
+91
+00:04:27.440 --> 00:04:32.560
+choice than the line plot, so remember this scatter function well.
+
+92
+00:04:32.560 --> 00:04:36.520
+You could also say that this is a more -honest- way of plotting your data,
+
+93
+00:04:36.520 --> 00:04:41.760
+because you can clearly see that the plot is based on just four data points.
+
+94
+00:04:41.760 --> 00:04:41.760
+
+
+95
+00:04:41.760 --> 00:04:41.760
+
+
+96
+00:04:41.760 --> 00:04:48.480
+Now that we've got the basics of matplotlib covered, it's your turn to build some awesome plots.
+
+97
+00:04:48.480 --> 00:04:49.400
+Have fun!
+
+98
+00:04:49.400 --> 00:04:56.400
+But make sure to come back here so we can plot even more together.
+

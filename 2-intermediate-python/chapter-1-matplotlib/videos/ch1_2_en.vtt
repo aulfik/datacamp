@@ -1,0 +1,286 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.400
+Oh you are killing it!
+
+2
+00:00:04.400 --> 00:00:07.720
+Now in this video, I'll introduce the histogram.
+
+3
+00:00:07.720 --> 00:00:07.720
+
+
+4
+00:00:07.720 --> 00:00:07.720
+
+
+5
+00:00:07.720 --> 00:00:12.760
+The histogram is a type of visualization that's very useful to explore your data.
+
+6
+00:00:12.760 --> 00:00:16.720
+It can help you to get an idea about the distribution of your variables.
+
+7
+00:00:16.720 --> 00:00:22.520
+To see how it works, imagine 12 values between 0 and 6.
+
+8
+00:00:22.520 --> 00:00:22.520
+
+
+9
+00:00:22.520 --> 00:00:22.520
+
+
+10
+00:00:22.520 --> 00:00:25.000
+I've put them along a number line here.
+
+11
+00:00:25.000 --> 00:00:30.400
+To build a histogram for these values, you can divide the line into equal chunks, called bins.
+
+12
+00:00:30.400 --> 00:00:30.400
+
+
+13
+00:00:30.400 --> 00:00:30.880
+
+
+14
+00:00:30.880 --> 00:00:35.600
+Suppose you go for 3 bins, that each have a width of 2.
+
+15
+00:00:35.600 --> 00:00:40.440
+Next, you count how many data points sit inside each bin.
+
+16
+00:00:40.440 --> 00:00:40.440
+
+
+17
+00:00:40.440 --> 00:00:40.440
+
+
+18
+00:00:40.440 --> 00:00:42.360
+There's 4 data points in the first bin,
+
+19
+00:00:42.360 --> 00:00:42.760
+
+
+20
+00:00:42.760 --> 00:00:44.320
+6 in the second bin
+
+21
+00:00:44.320 --> 00:00:44.320
+
+
+22
+00:00:44.320 --> 00:00:46.280
+and 2 in the third bin.
+
+23
+00:00:46.280 --> 00:00:46.280
+
+
+24
+00:00:46.280 --> 00:00:46.280
+
+
+25
+00:00:46.280 --> 00:00:49.640
+Finally, you draw a bar for each bin.
+
+26
+00:00:49.640 --> 00:00:54.120
+The height of the bar corresponds to the number of data points that fall in this bin.
+
+27
+00:00:54.120 --> 00:00:55.280
+
+
+28
+00:00:55.280 --> 00:00:55.280
+
+
+29
+00:00:55.280 --> 00:01:03.000
+The result is a histogram, which gives us a nice overview on how the 12 values are distributed.
+
+30
+00:01:03.000 --> 00:01:09.160
+Most values are in the middle, but there are more values below 2 than there are above 4.
+
+31
+00:01:09.160 --> 00:01:09.160
+
+
+32
+00:01:09.160 --> 00:01:09.160
+
+
+33
+00:01:09.160 --> 00:01:13.320
+Of course, we can use matplotlib to build histograms as well.
+
+34
+00:01:13.320 --> 00:01:13.320
+
+
+35
+00:01:13.320 --> 00:01:13.360
+
+
+36
+00:01:13.360 --> 00:01:19.520
+As before, you should start by importing the pyplot package that's inside matplotlib.
+
+37
+00:01:19.520 --> 00:01:22.360
+Next, you can use the hist function.
+
+38
+00:01:22.360 --> 00:01:24.920
+Let's open up its documentation.
+
+39
+00:01:24.920 --> 00:01:30.800
+There's a bunch of arguments you can specify, but the first two here are the most important ones.
+
+40
+00:01:30.800 --> 00:01:35.400
+x should be a list of values you want to build a histogram for.
+
+41
+00:01:35.400 --> 00:01:42.840
+You can use the second argument, bins, to tell Python into how many bins the data should be divided.
+
+42
+00:01:42.840 --> 00:01:46.760
+Based on this number, hist will automatically find appropriate
+
+43
+00:01:46.760 --> 00:01:51.880
+boundaries for all bins, and calculate how may values are in each one.
+
+44
+00:01:51.880 --> 00:01:57.280
+If you don't specify the bins argument, it will by 10 by default.
+
+45
+00:01:57.280 --> 00:01:57.280
+
+
+46
+00:01:57.280 --> 00:01:57.360
+
+
+47
+00:01:57.360 --> 00:02:04.160
+So to generate the histogram that you've seen before, let's start by building a list with the 12 values.
+
+48
+00:02:04.160 --> 00:02:11.400
+Next, you simply call hist and pass this list as an input, so it's matched to the argument x.
+
+49
+00:02:11.400 --> 00:02:17.960
+I also specified the bins argument to be 3, so that the values are divided in three bins.
+
+50
+00:02:17.960 --> 00:02:21.560
+If you finally call the show function, you get a histogram.
+
+51
+00:02:21.560 --> 00:02:21.560
+
+
+52
+00:02:21.560 --> 00:02:21.560
+
+
+53
+00:02:21.560 --> 00:02:26.040
+Histograms are really useful to give a bigger picture.
+
+54
+00:02:26.040 --> 00:02:26.040
+
+
+55
+00:02:26.040 --> 00:02:26.560
+
+
+56
+00:02:26.560 --> 00:02:30.440
+As an example, have a look at this so-called population pyramid.
+
+57
+00:02:30.440 --> 00:02:36.800
+The age distribution is shown, for both males and females, in the European Union.
+
+58
+00:02:36.800 --> 00:02:42.200
+Notice that the histograms are flipped 90 degrees; the bins are horizontal now.
+
+59
+00:02:42.200 --> 00:02:49.960
+The bins are largest for the ages 40 to 44, where there are 20 million males and 20 million females.
+
+60
+00:02:49.960 --> 00:02:52.600
+They are the so called baby boomers.
+
+61
+00:02:52.600 --> 00:02:56.760
+These are figures of the year 2010.
+
+62
+00:02:56.760 --> 00:02:59.680
+What do you think will have changed in 2050?
+
+63
+00:02:59.680 --> 00:02:59.680
+
+
+64
+00:02:59.680 --> 00:02:59.680
+
+
+65
+00:02:59.680 --> 00:03:01.400
+Let's have a look.
+
+66
+00:03:01.400 --> 00:03:06.320
+The distribution is flatter, and the baby boom generation has gotten older.
+
+67
+00:03:06.320 --> 00:03:11.720
+With the blink of an eye, you can easily see how demographics will be changing over time.
+
+68
+00:03:11.720 --> 00:03:14.520
+That's the true power of histograms at work here!
+
+69
+00:03:14.520 --> 00:03:14.520
+
+
+70
+00:03:14.520 --> 00:03:14.520
+
+
+71
+00:03:14.520 --> 00:03:23.400
+Now head over to the exercises to experiment with histograms yourself!
+
