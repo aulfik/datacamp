@@ -1,0 +1,214 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.080
+Pivot tables are another way of calculating grouped summary statistics.
+
+2
+00:00:06.080 --> 00:00:10.920
+If you've ever used a spreadsheet, chances are you've used a pivot table.
+
+3
+00:00:10.920 --> 00:00:15.120
+Let's see how to create pivot tables in pandas.
+
+4
+00:00:15.120 --> 00:00:15.120
+
+
+5
+00:00:15.120 --> 00:00:15.120
+
+
+6
+00:00:15.120 --> 00:00:21.080
+In the last lesson, we grouped the dogs by color and calculated their mean weights.
+
+7
+00:00:21.080 --> 00:00:21.080
+
+
+8
+00:00:21.080 --> 00:00:21.080
+
+
+9
+00:00:21.080 --> 00:00:25.760
+We can do the same thing using the pivot_table method.
+
+10
+00:00:25.760 --> 00:00:28.120
+The "values" argument is the column that you want to
+
+11
+00:00:28.120 --> 00:00:33.680
+summarize, and the index column is the column that you want to group by.
+
+12
+00:00:33.680 --> 00:00:37.640
+By default, pivot_table takes the mean value for each group.
+
+13
+00:00:37.640 --> 00:00:37.640
+
+
+14
+00:00:37.640 --> 00:00:39.280
+
+
+15
+00:00:39.280 --> 00:00:45.960
+If we want a different summary statistic, we can use the aggfunc argument and pass it a function.
+
+16
+00:00:45.960 --> 00:00:52.360
+Here, we take the median for each dog color using NumPy's median function.
+
+17
+00:00:52.360 --> 00:00:52.360
+
+
+18
+00:00:52.360 --> 00:00:52.360
+
+
+19
+00:00:52.360 --> 00:00:59.280
+To get multiple summary statistics at a time, we can pass a list of functions to the aggfunc argument.
+
+20
+00:00:59.280 --> 00:01:04.200
+Here, we get the mean and median for each dog color.
+
+21
+00:01:04.200 --> 00:01:04.200
+
+
+22
+00:01:04.200 --> 00:01:04.200
+
+
+23
+00:01:04.200 --> 00:01:09.720
+You also previously computed the mean weight grouped by two variables: color and breed.
+
+24
+00:01:09.720 --> 00:01:09.720
+
+
+25
+00:01:09.720 --> 00:01:11.440
+
+
+26
+00:01:11.440 --> 00:01:14.120
+We can also do this using the pivot_table method.
+
+27
+00:01:14.120 --> 00:01:19.920
+To group by two variables, we can pass a second variable name into the columns argument.
+
+28
+00:01:19.920 --> 00:01:21.320
+
+
+29
+00:01:21.320 --> 00:01:21.320
+
+
+30
+00:01:21.320 --> 00:01:27.200
+While the result looks a little different than what we had before, it contains the same numbers.
+
+31
+00:01:27.200 --> 00:01:34.000
+There are NaNs, or missing values, because there are no black Chihuahuas or gray Labradors in our dataset, for example.
+
+32
+00:01:34.000 --> 00:01:35.680
+
+
+33
+00:01:35.680 --> 00:01:35.680
+
+
+34
+00:01:35.680 --> 00:01:37.800
+Instead of having lots of missing values in our pivot
+
+35
+00:01:37.800 --> 00:01:42.400
+table, we can have them filled in using the fill_value argument.
+
+36
+00:01:42.400 --> 00:01:47.080
+Here, all of the NaNs get filled in with zeros.
+
+37
+00:01:47.080 --> 00:01:48.920
+
+
+38
+00:01:48.920 --> 00:01:48.920
+
+
+39
+00:01:48.920 --> 00:01:55.560
+If we set the margins argument to True, the last row and last column of the pivot table contain the
+
+40
+00:01:55.560 --> 00:02:02.440
+mean of all the values in the column or row, not including the missing values that were filled in with Os.
+
+41
+00:02:02.440 --> 00:02:02.440
+
+
+42
+00:02:02.440 --> 00:02:02.440
+
+
+43
+00:02:02.440 --> 00:02:06.280
+For example, in the last row of the Labrador column, we
+
+44
+00:02:06.280 --> 00:02:11.280
+can see that the mean weight of the Labradors is 26 kilograms.
+
+45
+00:02:11.280 --> 00:02:18.200
+In the last column of the Brown row, the mean weight of the Brown dogs is 24 kilograms.
+
+46
+00:02:18.200 --> 00:02:27.240
+The value in the bottom right, in the last row and last column, is the mean weight of all the dogs in the dataset.
+
+47
+00:02:27.240 --> 00:02:27.240
+
+
+48
+00:02:27.240 --> 00:02:27.240
+
+
+49
+00:02:27.240 --> 00:02:32.360
+Using margins equals True allows us to see a summary statistic for multiple levels of the
+
+50
+00:02:32.360 --> 00:02:39.960
+dataset: the entire dataset, grouped by one variable, by another variable, and by two variables.
+
+51
+00:02:39.960 --> 00:02:39.960
+
+
+52
+00:02:39.960 --> 00:02:39.960
+
+
+53
+00:02:39.960 --> 00:02:46.760
+Time to practice aggregating data using pivot tables!
+

@@ -1,0 +1,166 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+So far, you've been calculating summary statistics for all rows of a
+
+2
+00:00:05.000 --> 00:00:09.560
+dataset, but summary statistics can be useful to compare different groups.
+
+3
+00:00:09.560 --> 00:00:10.480
+
+
+4
+00:00:10.480 --> 00:00:10.480
+
+
+5
+00:00:10.480 --> 00:00:13.680
+While computing summary statistics of entire columns may be
+
+6
+00:00:13.680 --> 00:00:19.040
+useful, you can gain many insights from summaries of individual groups.
+
+7
+00:00:19.040 --> 00:00:24.040
+For example, does one color of dog weigh more than another on average?
+
+8
+00:00:24.040 --> 00:00:26.000
+Are female dogs taller than males?
+
+9
+00:00:26.000 --> 00:00:27.120
+
+
+10
+00:00:27.120 --> 00:00:27.120
+
+
+11
+00:00:27.120 --> 00:00:31.680
+You can already answer these questions with what you've learned so far!
+
+12
+00:00:31.680 --> 00:00:31.680
+
+
+13
+00:00:31.680 --> 00:00:31.680
+
+
+14
+00:00:31.680 --> 00:00:36.920
+We can subset the dogs into groups based on their color, and take the mean of each.
+
+15
+00:00:36.920 --> 00:00:43.720
+But that's a lot of work, and the duplicated code means you can easily introduce copy and paste bugs.
+
+16
+00:00:43.720 --> 00:00:43.720
+
+
+17
+00:00:43.720 --> 00:00:43.720
+
+
+18
+00:00:43.720 --> 00:00:45.520
+That's where the groupby method comes in.
+
+19
+00:00:45.520 --> 00:00:46.640
+
+
+20
+00:00:46.640 --> 00:00:46.640
+
+
+21
+00:00:46.640 --> 00:00:52.120
+We can group by the color variable, select the weight column, and take the mean.
+
+22
+00:00:52.120 --> 00:00:54.760
+This will give us the mean weight for each dog color.
+
+23
+00:00:54.760 --> 00:00:54.760
+
+
+24
+00:00:54.760 --> 00:00:55.920
+
+
+25
+00:00:55.920 --> 00:01:03.120
+This was just one line of code compared to the five we had to write before to get the same results.
+
+26
+00:01:03.120 --> 00:01:03.120
+
+
+27
+00:01:03.120 --> 00:01:03.120
+
+
+28
+00:01:03.120 --> 00:01:09.720
+Just like with ungrouped summary statistics, we can use the agg method to get multiple statistics.
+
+29
+00:01:09.720 --> 00:01:15.320
+Here, we pass a list of functions into agg after grouping by color.
+
+30
+00:01:15.320 --> 00:01:21.280
+This gives us the minimum, maximum, and sum of the different colored dogs' weights.
+
+31
+00:01:21.280 --> 00:01:21.280
+
+
+32
+00:01:21.280 --> 00:01:21.280
+
+
+33
+00:01:21.280 --> 00:01:25.720
+You can also group by multiple columns and calculate summary statistics.
+
+34
+00:01:25.720 --> 00:01:31.400
+Here, we group by color and breed, select the weight column and take the mean.
+
+35
+00:01:31.400 --> 00:01:34.600
+This gives us the mean weight of each breed of each color.
+
+36
+00:01:34.600 --> 00:01:34.600
+
+
+37
+00:01:34.600 --> 00:01:36.120
+
+
+38
+00:01:36.120 --> 00:01:41.320
+You can also group by multiple columns and aggregate by multiple columns.
+
+39
+00:01:41.320 --> 00:01:41.320
+
+
+40
+00:01:41.320 --> 00:01:41.320
+
+
+41
+00:01:41.320 --> 00:01:48.160
+Now that we've talked about grouping, it's time to practice grouped summary statistics.
+

@@ -1,0 +1,338 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.000
+Hi, I'm Maggie, and I'll be the other instructor for this course.
+
+2
+00:00:06.000 --> 00:00:06.000
+
+
+3
+00:00:06.000 --> 00:00:06.000
+
+
+4
+00:00:06.000 --> 00:00:14.160
+In the first chapter, you learned about DataFrames, how to sort and subset them, and how to add new columns to them.
+
+5
+00:00:14.160 --> 00:00:14.200
+
+
+6
+00:00:14.200 --> 00:00:14.200
+
+
+7
+00:00:14.200 --> 00:00:19.200
+In this chapter, we'll talk about aggregating data, starting with summary statistics.
+
+8
+00:00:19.200 --> 00:00:20.480
+
+
+9
+00:00:20.480 --> 00:00:20.480
+
+
+10
+00:00:20.480 --> 00:00:27.760
+Summary statistics, as follows from their name, are numbers that summarize and tell you about your dataset.
+
+11
+00:00:27.760 --> 00:00:27.760
+
+
+12
+00:00:27.760 --> 00:00:27.800
+
+
+13
+00:00:27.800 --> 00:00:31.560
+One of the most common summary statistics for numeric data is the
+
+14
+00:00:31.560 --> 00:00:36.840
+mean, which is one way of telling you where the "center" of your data is.
+
+15
+00:00:36.840 --> 00:00:43.840
+You can calculate the mean of a column by selecting the column with square brackets and calling dot-mean.
+
+16
+00:00:43.840 --> 00:00:43.840
+
+
+17
+00:00:43.840 --> 00:00:43.880
+
+
+18
+00:00:43.880 --> 00:00:47.800
+There are lots of other summary statistics that you can compute on columns,
+
+19
+00:00:47.800 --> 00:00:54.840
+like median and mode, minimum and maximum, and variance and standard deviation.
+
+20
+00:00:54.840 --> 00:00:59.120
+You can also take sums and calculate quantiles.
+
+21
+00:00:59.120 --> 00:00:59.120
+
+
+22
+00:00:59.120 --> 00:00:59.120
+
+
+23
+00:00:59.120 --> 00:01:02.680
+You can also get summary statistics for date columns.
+
+24
+00:01:02.680 --> 00:01:09.920
+For example, we can find the oldest dog's date of birth by taking the minimum of the date of birth column.
+
+25
+00:01:09.920 --> 00:01:16.640
+Similarly, we can take the maximum to see that the youngest dog was born in 2018.
+
+26
+00:01:16.640 --> 00:01:16.640
+
+
+27
+00:01:16.640 --> 00:01:16.640
+
+
+28
+00:01:16.640 --> 00:01:22.720
+The aggregate, or agg, method allows you to compute custom summary statistics.
+
+29
+00:01:22.720 --> 00:01:22.720
+
+
+30
+00:01:22.720 --> 00:01:22.720
+
+
+31
+00:01:22.720 --> 00:01:29.520
+Here, we create a function called pct30 that computes the thirtieth percentile of a DataFrame column.
+
+32
+00:01:29.520 --> 00:01:34.520
+Don't worry if this code doesn't make sense to you -- just know that the
+
+33
+00:01:34.520 --> 00:01:39.080
+function takes in a column and spits out the column's thirtieth percentile.
+
+34
+00:01:39.080 --> 00:01:40.520
+
+
+35
+00:01:40.520 --> 00:01:40.520
+
+
+36
+00:01:40.520 --> 00:01:48.400
+Now we can subset the weight column and call dot-agg, passing in the name of our function, pct30.
+
+37
+00:01:48.400 --> 00:01:51.480
+It gives us the thirtieth percentile of the dogs' weights.
+
+38
+00:01:51.480 --> 00:01:51.480
+
+
+39
+00:01:51.480 --> 00:01:52.960
+
+
+40
+00:01:52.960 --> 00:01:56.520
+agg can also be used on more than one column.
+
+41
+00:01:56.520 --> 00:02:04.160
+By selecting the weight and height columns before calling agg, we get the thirtieth percentile for both columns.
+
+42
+00:02:04.160 --> 00:02:04.160
+
+
+43
+00:02:04.160 --> 00:02:04.160
+
+
+44
+00:02:04.160 --> 00:02:09.120
+We can also use agg to get multiple summary statistics at once.
+
+45
+00:02:09.120 --> 00:02:13.960
+Here's another function that computes the fortieth percentile called pct40.
+
+46
+00:02:13.960 --> 00:02:13.960
+
+
+47
+00:02:13.960 --> 00:02:15.120
+
+
+48
+00:02:15.120 --> 00:02:21.760
+We can pass a list of functions into agg, in this case, pct30 and pct40,
+
+49
+00:02:21.760 --> 00:02:25.720
+which will return the thirtieth and fortieth percentiles of the dogs' weights.
+
+50
+00:02:25.720 --> 00:02:25.720
+
+
+51
+00:02:25.720 --> 00:02:25.720
+
+
+52
+00:02:25.720 --> 00:02:33.040
+pandas also has methods for computing cumulative statistics, for example, the cumulative sum.
+
+53
+00:02:33.040 --> 00:02:33.040
+
+
+54
+00:02:33.040 --> 00:02:33.040
+
+
+55
+00:02:33.040 --> 00:02:40.320
+Calling cumsum on a column returns not just one number, but a number for each row of the DataFrame.
+
+56
+00:02:40.320 --> 00:02:40.320
+
+
+57
+00:02:40.320 --> 00:02:40.320
+
+
+58
+00:02:40.320 --> 00:02:46.480
+The first number returned, or the number in the zeroth index, is the first dog's weight.
+
+59
+00:02:46.480 --> 00:02:46.480
+
+
+60
+00:02:46.480 --> 00:02:46.480
+
+
+61
+00:02:46.480 --> 00:02:51.040
+The next number is the sum of the first and second dogs' weights.
+
+62
+00:02:51.040 --> 00:02:51.040
+
+
+63
+00:02:51.040 --> 00:02:51.040
+
+
+64
+00:02:51.040 --> 00:02:56.640
+The third number is the sum of the first, second, and third dogs' weights, and so on.
+
+65
+00:02:56.640 --> 00:02:56.640
+
+
+66
+00:02:56.640 --> 00:02:56.640
+
+
+67
+00:02:56.640 --> 00:03:00.840
+The last number is the sum of all the dogs' weights.
+
+68
+00:03:00.840 --> 00:03:00.840
+
+
+69
+00:03:00.840 --> 00:03:00.840
+
+
+70
+00:03:00.840 --> 00:03:06.520
+pandas also has methods for other cumulative statistics, such as
+
+71
+00:03:06.520 --> 00:03:11.520
+the cumulative maximum, cumulative minimum, and the cumulative product.
+
+72
+00:03:11.520 --> 00:03:16.520
+These all return an entire column of a DataFrame, rather than a single number.
+
+73
+00:03:16.520 --> 00:03:17.840
+
+
+74
+00:03:17.840 --> 00:03:17.840
+
+
+75
+00:03:17.840 --> 00:03:23.960
+In this chapter, you'll be working with data on Walmart stores, which is a chain of department stores in the US.
+
+76
+00:03:23.960 --> 00:03:29.320
+The dataset contains weekly sales in US dollars in various stores.
+
+77
+00:03:29.320 --> 00:03:33.840
+Each store has an ID number and a specific store type.
+
+78
+00:03:33.840 --> 00:03:39.240
+The sales are also separated by department ID.
+
+79
+00:03:39.240 --> 00:03:43.360
+Along with weekly sales, there is information about whether it was a holiday week
+
+80
+00:03:43.360 --> 00:03:48.600
+or not, the average temperature during the week in that location, the average
+
+81
+00:03:48.600 --> 00:03:53.560
+fuel price in dollars per liter that week, and the national unemployment rate that week.
+
+82
+00:03:53.560 --> 00:03:53.560
+
+
+83
+00:03:53.560 --> 00:03:53.560
+
+
+84
+00:03:53.560 --> 00:03:59.080
+Time to practice your summary statistics skills!
+
