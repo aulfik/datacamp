@@ -1,0 +1,382 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.840
+Hi, I'm Richie.
+
+2
+00:00:02.840 --> 00:00:05.040
+I'll be your tour guide through the world of pandas.
+
+3
+00:00:05.040 --> 00:00:05.040
+
+
+4
+00:00:05.040 --> 00:00:05.040
+
+
+5
+00:00:05.040 --> 00:00:09.400
+pandas is a Python package for data manipulation.
+
+6
+00:00:09.400 --> 00:00:15.080
+It can also be used for data visualization; we'll get to that in Chapter 4.
+
+7
+00:00:15.080 --> 00:00:15.080
+
+
+8
+00:00:15.080 --> 00:00:15.080
+
+
+9
+00:00:15.080 --> 00:00:20.040
+We'll start by talking about DataFrames, which form the core of pandas.
+
+10
+00:00:20.040 --> 00:00:20.040
+
+
+11
+00:00:20.040 --> 00:00:20.040
+
+
+12
+00:00:20.040 --> 00:00:25.120
+In chapter 2, we'll discuss aggregating data to gather insights.
+
+13
+00:00:25.120 --> 00:00:25.120
+
+
+14
+00:00:25.120 --> 00:00:25.120
+
+
+15
+00:00:25.120 --> 00:00:30.560
+In chapter 3, you'll learn all about slicing and indexing to subset DataFrames.
+
+16
+00:00:30.560 --> 00:00:31.640
+
+
+17
+00:00:31.640 --> 00:00:31.640
+
+
+18
+00:00:31.640 --> 00:00:38.760
+Finally, you'll visualize your data, deal with missing data, and read data into a DataFrame.
+
+19
+00:00:38.760 --> 00:00:38.760
+
+
+20
+00:00:38.760 --> 00:00:38.760
+
+
+21
+00:00:38.760 --> 00:00:39.320
+Let's dive in.
+
+22
+00:00:39.320 --> 00:00:39.320
+
+
+23
+00:00:39.320 --> 00:00:39.320
+
+
+24
+00:00:39.320 --> 00:00:48.760
+pandas is built on top of two essential Python packages, NumPy and Matplotlib.
+
+25
+00:00:48.760 --> 00:00:55.200
+Numpy provides multidimensional array objects for easy data manipulation that pandas uses to
+
+26
+00:00:55.200 --> 00:01:03.440
+store data, and Matplotlib has powerful data visualization capabilities that pandas takes advantage of.
+
+27
+00:01:03.440 --> 00:01:03.440
+
+
+28
+00:01:03.440 --> 00:01:03.440
+
+
+29
+00:01:03.440 --> 00:01:12.880
+pandas has millions of users, with PyPi recording about 14 million downloads in December 2019.
+
+30
+00:01:12.880 --> 00:01:16.520
+This represents almost the entire Python data science community!
+
+31
+00:01:16.520 --> 00:01:18.320
+
+
+32
+00:01:18.320 --> 00:01:18.320
+
+
+33
+00:01:18.320 --> 00:01:22.880
+There are several ways to store data for analysis, but
+
+34
+00:01:22.880 --> 00:01:28.720
+rectangular data, sometimes called "tabular data" is the most common form.
+
+35
+00:01:28.720 --> 00:01:33.040
+In this example, with dogs, each observation, or each dog,
+
+36
+00:01:33.040 --> 00:01:37.760
+is a row, and each variable, or each dog property, is a column.
+
+37
+00:01:37.760 --> 00:01:42.680
+pandas is designed to work with rectangular data like this.
+
+38
+00:01:42.680 --> 00:01:42.680
+
+
+39
+00:01:42.680 --> 00:01:44.720
+
+
+40
+00:01:44.720 --> 00:01:50.960
+In pandas, rectangular data is represented as a DataFrame object.
+
+41
+00:01:50.960 --> 00:01:56.640
+Every programming language used for data analysis has something similar to this.
+
+42
+00:01:56.640 --> 00:02:02.520
+R also has DataFrames, while SQL has database tables.
+
+43
+00:02:02.520 --> 00:02:06.560
+Every value within a column has the same data type, either text
+
+44
+00:02:06.560 --> 00:02:11.800
+or numeric, but different columns can contain different data types.
+
+45
+00:02:11.800 --> 00:02:11.800
+
+
+46
+00:02:11.800 --> 00:02:13.200
+
+
+47
+00:02:13.200 --> 00:02:19.120
+When you first receive a new dataset, you want to quickly explore it and get a sense of its contents.
+
+48
+00:02:19.120 --> 00:02:22.640
+pandas has several methods for this.
+
+49
+00:02:22.640 --> 00:02:22.640
+
+
+50
+00:02:22.640 --> 00:02:23.800
+
+
+51
+00:02:23.800 --> 00:02:29.400
+The first is head, which returns the first few rows of the DataFrame.
+
+52
+00:02:29.400 --> 00:02:38.360
+We only had seven rows to begin with, so it's not super exciting, but this becomes very useful if you have many rows.
+
+53
+00:02:38.360 --> 00:02:38.360
+
+
+54
+00:02:38.360 --> 00:02:39.680
+
+
+55
+00:02:39.680 --> 00:02:46.680
+The info method displays the names of columns, the data types they contain, and whether they have any missing values.
+
+56
+00:02:46.680 --> 00:02:46.680
+
+
+57
+00:02:46.680 --> 00:02:46.680
+
+
+58
+00:02:46.680 --> 00:02:54.280
+A DataFrame's shape attribute contains a tuple that holds the number of rows followed by the number of columns.
+
+59
+00:02:54.280 --> 00:02:59.640
+Since this is an attribute instead of a method, you write it without parentheses.
+
+60
+00:02:59.640 --> 00:02:59.640
+
+
+61
+00:02:59.640 --> 00:02:59.640
+
+
+62
+00:02:59.640 --> 00:03:07.240
+The describe method computes some summary statistics for numerical columns, like mean and median.
+
+63
+00:03:07.240 --> 00:03:11.440
+"count" is the number of non-missing values in each column.
+
+64
+00:03:11.440 --> 00:03:17.320
+describe is good for a quick overview of numeric variables, but if you want more
+
+65
+00:03:17.320 --> 00:03:22.040
+control, you'll see how to perform more specific calculations later in the course.
+
+66
+00:03:22.040 --> 00:03:22.040
+
+
+67
+00:03:22.040 --> 00:03:22.040
+
+
+68
+00:03:22.040 --> 00:03:29.000
+DataFrames consist of three different components, accessible using attributes.
+
+69
+00:03:29.000 --> 00:03:29.000
+
+
+70
+00:03:29.000 --> 00:03:29.000
+
+
+71
+00:03:29.000 --> 00:03:36.320
+The values attribute, as you might expect, contains the data values in a 2-dimensional NumPy array.
+
+72
+00:03:36.320 --> 00:03:36.320
+
+
+73
+00:03:36.320 --> 00:03:36.320
+
+
+74
+00:03:36.320 --> 00:03:41.800
+The other two components of a DataFrame are labels for columns and rows.
+
+75
+00:03:41.800 --> 00:03:49.800
+The columns attribute contains column names, and the index attribute contains row numbers or row names.
+
+76
+00:03:49.800 --> 00:03:55.920
+Be careful, since row labels are stored in dot-index, not in dot-rows.
+
+77
+00:03:55.920 --> 00:03:57.440
+
+
+78
+00:03:57.440 --> 00:03:57.440
+
+
+79
+00:03:57.440 --> 00:04:02.720
+Notice that these are Index objects, which we'll cover in Chapter 3.
+
+80
+00:04:02.720 --> 00:04:05.520
+This allows for flexibility in labels.
+
+81
+00:04:05.520 --> 00:04:12.040
+For example, the dogs data uses row numbers, but row names are also possible.
+
+82
+00:04:12.040 --> 00:04:12.040
+
+
+83
+00:04:12.040 --> 00:04:12.040
+
+
+84
+00:04:12.040 --> 00:04:19.040
+Python has a semi-official philosophy on how to write good code called The Zen of Python.
+
+85
+00:04:19.040 --> 00:04:25.960
+One suggestion is that given a programming problem, there should only be one obvious solution.
+
+86
+00:04:25.960 --> 00:04:33.240
+As you go through this course, bear in mind that pandas deliberately doesn't follow this philosophy.
+
+87
+00:04:33.240 --> 00:04:38.240
+Instead, there are often multiple ways to solve a problem, leaving you to choose the best.
+
+88
+00:04:38.240 --> 00:04:38.240
+
+
+89
+00:04:38.240 --> 00:04:39.880
+
+
+90
+00:04:39.880 --> 00:04:43.760
+In this respect, pandas is like a Swiss Army Knife, giving you a
+
+91
+00:04:43.760 --> 00:04:50.360
+variety of tools, making it incredibly powerful, but more difficult to learn.
+
+92
+00:04:50.360 --> 00:04:56.440
+In this course, we aim for a more streamlined approach to pandas, only covering the most important ways of doing things.
+
+93
+00:04:56.440 --> 00:04:56.440
+
+
+94
+00:04:56.440 --> 00:04:57.640
+
+
+95
+00:04:57.640 --> 00:05:02.000
+Enough meditating, time to write some code!
+

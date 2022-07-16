@@ -1,0 +1,306 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.600
+In this video, we'll cover the two simplest and possibly
+
+2
+00:00:04.600 --> 00:00:09.760
+most important ways to find interesting parts of your DataFrame.
+
+3
+00:00:09.760 --> 00:00:09.760
+
+
+4
+00:00:09.760 --> 00:00:09.760
+
+
+5
+00:00:09.760 --> 00:00:14.760
+The first thing you can do is change the order of the rows by
+
+6
+00:00:14.760 --> 00:00:19.280
+sorting them so that the most interesting data is at the top of the DataFrame.
+
+7
+00:00:19.280 --> 00:00:25.320
+You can sort rows using the sort_values method, passing in a column name that you want to sort by.
+
+8
+00:00:25.320 --> 00:00:25.320
+
+
+9
+00:00:25.320 --> 00:00:26.760
+
+
+10
+00:00:26.760 --> 00:00:33.800
+For example, when we apply sort_values on the weight_kg column of the dogs DataFrame, we get the
+
+11
+00:00:33.800 --> 00:00:40.800
+lightest dog at the top, Stella the Chihuahua, and the heaviest dog at the bottom, Bernie the Saint Bernard.
+
+12
+00:00:40.800 --> 00:00:40.800
+
+
+13
+00:00:40.800 --> 00:00:42.360
+
+
+14
+00:00:42.360 --> 00:00:49.480
+Setting the ascending argument to False will sort the data the other way around, from heaviest dog to lightest dog.
+
+15
+00:00:49.480 --> 00:00:51.120
+
+
+16
+00:00:51.120 --> 00:00:51.120
+
+
+17
+00:00:51.120 --> 00:00:57.840
+We can sort by multiple variables by passing a list of column names to sort_values.
+
+18
+00:00:57.840 --> 00:01:01.560
+Here, we sort first by weight, then by height.
+
+19
+00:01:01.560 --> 00:01:07.960
+Now, Charlie, Lucy, and Bella are ordered from shortest to tallest, even though they all weigh the same.
+
+20
+00:01:07.960 --> 00:01:07.960
+
+
+21
+00:01:07.960 --> 00:01:07.960
+
+
+22
+00:01:07.960 --> 00:01:13.640
+To change the direction values are sorted in, pass a list to the ascending
+
+23
+00:01:13.640 --> 00:01:19.840
+argument to specify which direction sorting should be done for each variable.
+
+24
+00:01:19.840 --> 00:01:25.600
+Now, Charlie, Lucy, and Bella are ordered from tallest to shortest.
+
+25
+00:01:25.600 --> 00:01:25.600
+
+
+26
+00:01:25.600 --> 00:01:25.600
+
+
+27
+00:01:25.600 --> 00:01:29.320
+We may want to zoom in on just one column.
+
+28
+00:01:29.320 --> 00:01:36.600
+We can do this using the name of the DataFrame, followed by square brackets with a column name inside.
+
+29
+00:01:36.600 --> 00:01:38.640
+Here, we can look at just the name column.
+
+30
+00:01:38.640 --> 00:01:38.640
+
+
+31
+00:01:38.640 --> 00:01:38.640
+
+
+32
+00:01:38.640 --> 00:01:45.440
+To select multiple columns, you need two pairs of square brackets.
+
+33
+00:01:45.440 --> 00:01:51.040
+In this code, the inner and outer square brackets are performing different tasks.
+
+34
+00:01:51.040 --> 00:01:55.120
+The outer square brackets are responsible for subsetting the DataFrame,
+
+35
+00:01:55.120 --> 00:02:00.440
+and the inner square brackets are creating a list of column names to subset.
+
+36
+00:02:00.440 --> 00:02:00.440
+
+
+37
+00:02:00.440 --> 00:02:00.440
+
+
+38
+00:02:00.440 --> 00:02:02.760
+This means you could provide a separate
+
+39
+00:02:02.760 --> 00:02:08.560
+list of column names as a variable and then use that list to perform the same subsetting.
+
+40
+00:02:08.560 --> 00:02:10.640
+Usually, it's easier to do in one line.
+
+41
+00:02:10.640 --> 00:02:10.640
+
+
+42
+00:02:10.640 --> 00:02:12.520
+
+
+43
+00:02:12.520 --> 00:02:16.160
+There are lots of different ways to subset rows.
+
+44
+00:02:16.160 --> 00:02:21.920
+The most common way to do this is by creating a logical condition to filter against.
+
+45
+00:02:21.920 --> 00:02:28.280
+For example, let's find all the dogs whose height is greater than 50 centimeters.
+
+46
+00:02:28.280 --> 00:02:32.840
+Now we have a True or False value for every row.
+
+47
+00:02:32.840 --> 00:02:32.840
+
+
+48
+00:02:32.840 --> 00:02:32.840
+
+
+49
+00:02:32.840 --> 00:02:34.840
+We can use the logical condition inside of
+
+50
+00:02:34.840 --> 00:02:41.840
+square brackets to subset the rows we're interested in to get all of the dogs taller than 50 centimeters.
+
+51
+00:02:41.840 --> 00:02:41.840
+
+
+52
+00:02:41.840 --> 00:02:41.840
+
+
+53
+00:02:41.840 --> 00:02:46.440
+We can also subset rows based on text data.
+
+54
+00:02:46.440 --> 00:02:53.840
+Here, we use the double equal sign in the logical condition to filter the dogs that are Labradors.
+
+55
+00:02:53.840 --> 00:02:55.120
+
+
+56
+00:02:55.120 --> 00:02:55.120
+
+
+57
+00:02:55.120 --> 00:02:57.280
+We can also subset based on dates.
+
+58
+00:02:57.280 --> 00:03:03.280
+Here, we filter all the dogs born before 2015.
+
+59
+00:03:03.280 --> 00:03:09.000
+Notice that the dates are in quotes and are written as year then month, then day.
+
+60
+00:03:09.000 --> 00:03:12.560
+This is the international standard date format.
+
+61
+00:03:12.560 --> 00:03:12.560
+
+
+62
+00:03:12.560 --> 00:03:12.560
+
+
+63
+00:03:12.560 --> 00:03:18.480
+To subset the rows that meet multiple conditions, you can combine
+
+64
+00:03:18.480 --> 00:03:23.640
+conditions using logical operators, such as the "and" operator seen here.
+
+65
+00:03:23.640 --> 00:03:29.280
+This means that only rows that meet both of these conditions will be subsetted.
+
+66
+00:03:29.280 --> 00:03:29.280
+
+
+67
+00:03:29.280 --> 00:03:30.480
+
+
+68
+00:03:30.480 --> 00:03:36.160
+You could also do this in one line of code, but you'll also need to add parentheses around each condition.
+
+69
+00:03:36.160 --> 00:03:36.160
+
+
+70
+00:03:36.160 --> 00:03:37.560
+
+
+71
+00:03:37.560 --> 00:03:45.200
+If you want to filter on multiple values of a categorical variable, the easiest way is to use the isin method.
+
+72
+00:03:45.200 --> 00:03:48.920
+This takes in a list of values to filter for.
+
+73
+00:03:48.920 --> 00:03:57.840
+Here, we check if the color of a dog is black or brown, and use this condition to subset the data.
+
+74
+00:03:57.840 --> 00:03:57.840
+
+
+75
+00:03:57.840 --> 00:03:57.840
+
+
+76
+00:03:57.840 --> 00:04:02.760
+Now it's time to practice your sorting and subsetting!
+
