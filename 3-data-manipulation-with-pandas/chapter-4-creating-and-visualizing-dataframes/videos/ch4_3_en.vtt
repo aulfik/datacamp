@@ -1,0 +1,350 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.680
+Now that you've learned a lot about how to work with pandas
+
+2
+00:00:03.680 --> 00:00:07.680
+DataFrames, how do you get data into a DataFrame in the first place?
+
+3
+00:00:07.680 --> 00:00:09.120
+
+
+4
+00:00:09.120 --> 00:00:09.120
+
+
+5
+00:00:09.120 --> 00:00:14.480
+Before creating your own DataFrames, let's talk about dictionaries.
+
+6
+00:00:14.480 --> 00:00:14.480
+
+
+7
+00:00:14.480 --> 00:00:14.480
+
+
+8
+00:00:14.480 --> 00:00:18.040
+A dictionary is a way of storing data in Python.
+
+9
+00:00:18.040 --> 00:00:20.240
+It holds a set of key-value pairs.
+
+10
+00:00:20.240 --> 00:00:20.240
+
+
+11
+00:00:20.240 --> 00:00:21.320
+
+
+12
+00:00:21.320 --> 00:00:26.080
+You can create a dictionary like this, using curly braces.
+
+13
+00:00:26.080 --> 00:00:30.360
+Inside, each key-value pair is written as "key colon value."
+
+14
+00:00:30.360 --> 00:00:30.360
+
+
+15
+00:00:30.360 --> 00:00:31.560
+
+
+16
+00:00:31.560 --> 00:00:34.680
+Let's create a dictionary that holds information about a book.
+
+17
+00:00:34.680 --> 00:00:43.400
+"Title" is a key in the dictionary, and "Charlotte's Web" is its corresponding value, and so on.
+
+18
+00:00:43.400 --> 00:00:43.400
+
+
+19
+00:00:43.400 --> 00:00:43.400
+
+
+20
+00:00:43.400 --> 00:00:48.760
+You can access values of a dictionary via their keys in square brackets.
+
+21
+00:00:48.760 --> 00:00:48.760
+
+
+22
+00:00:48.760 --> 00:00:48.760
+
+
+23
+00:00:48.760 --> 00:00:53.640
+For example, we can access the value of "title" like this.
+
+24
+00:00:53.640 --> 00:00:53.640
+
+
+25
+00:00:53.640 --> 00:00:53.640
+
+
+26
+00:00:53.640 --> 00:00:56.960
+There are many ways to create DataFrames from scratch, but we'll
+
+27
+00:00:56.960 --> 00:01:03.680
+discuss two ways: from a list of dictionaries and from a dictionary of lists.
+
+28
+00:01:03.680 --> 00:01:03.680
+
+
+29
+00:01:03.680 --> 00:01:03.680
+
+
+30
+00:01:03.680 --> 00:01:08.000
+In the first method, the DataFrame is built up row by row,
+
+31
+00:01:08.000 --> 00:01:12.080
+while in the second method, the DataFrame is built up column by column.
+
+32
+00:01:12.080 --> 00:01:12.080
+
+
+33
+00:01:12.080 --> 00:01:13.240
+
+
+34
+00:01:13.240 --> 00:01:16.960
+We have some new dog data to put into a DataFrame.
+
+35
+00:01:16.960 --> 00:01:16.960
+
+
+36
+00:01:16.960 --> 00:01:16.960
+
+
+37
+00:01:16.960 --> 00:01:21.080
+Let's start with the first method to do this, creating a list of dictionaries.
+
+38
+00:01:21.080 --> 00:01:21.080
+
+
+39
+00:01:21.080 --> 00:01:22.360
+
+
+40
+00:01:22.360 --> 00:01:26.960
+First, we'll create a new list using square brackets to hold our dictionaries.
+
+41
+00:01:26.960 --> 00:01:26.960
+
+
+42
+00:01:26.960 --> 00:01:26.960
+
+
+43
+00:01:26.960 --> 00:01:32.760
+Then, we'll go through the first row of our data and put it in a dictionary.
+
+44
+00:01:32.760 --> 00:01:37.400
+Each key, on the left of each colon, will become a column name.
+
+45
+00:01:37.400 --> 00:01:40.360
+Each value is one dog's data for that column.
+
+46
+00:01:40.360 --> 00:01:40.360
+
+
+47
+00:01:40.360 --> 00:01:45.600
+Here, the first key is "name," which is the first column name,
+
+48
+00:01:45.600 --> 00:01:49.200
+and its corresponding value is "Ginger," the name of the first dog.
+
+49
+00:01:49.200 --> 00:01:49.200
+
+
+50
+00:01:49.200 --> 00:01:57.480
+The second key is the second column name, "breed," and its value is "Dachshund," which is the first dog's breed.
+
+51
+00:01:57.480 --> 00:02:00.560
+Then we have the dog's height and weight.
+
+52
+00:02:00.560 --> 00:02:01.280
+
+
+53
+00:02:01.280 --> 00:02:01.280
+
+
+54
+00:02:01.280 --> 00:02:07.120
+For the next row, we create another dictionary that follows the same format.
+
+55
+00:02:07.120 --> 00:02:07.120
+
+
+56
+00:02:07.120 --> 00:02:07.120
+
+
+57
+00:02:07.120 --> 00:02:14.520
+Now that we have our list of dictionaries, we can pass it into pd-dot-DataFrame to convert it into DataFrame form.
+
+58
+00:02:14.520 --> 00:02:14.520
+
+
+59
+00:02:14.520 --> 00:02:14.520
+
+
+60
+00:02:14.520 --> 00:02:20.560
+Now let's talk about the dictionary of lists method.
+
+61
+00:02:20.560 --> 00:02:24.680
+When using this method, we need to go through the data column by column.
+
+62
+00:02:24.680 --> 00:02:31.240
+Remember that keys are to the left of a colon, and values are to the right.
+
+63
+00:02:31.240 --> 00:02:36.440
+Each key will be a column name, and each value will be a list of the values in the column.
+
+64
+00:02:36.440 --> 00:02:37.920
+
+
+65
+00:02:37.920 --> 00:02:37.920
+
+
+66
+00:02:37.920 --> 00:02:42.080
+First, we'll create a dictionary using curly braces.
+
+67
+00:02:42.080 --> 00:02:42.080
+
+
+68
+00:02:42.080 --> 00:02:48.240
+Let's start with the first column, which is called "name," so the first key is "name."
+
+69
+00:02:48.240 --> 00:02:52.480
+The value is a list containing each name, from top to bottom.
+
+70
+00:02:52.480 --> 00:02:54.720
+In this case, it's "Ginger" and "Scout."
+
+71
+00:02:54.720 --> 00:02:54.720
+
+
+72
+00:02:54.720 --> 00:02:54.720
+
+
+73
+00:02:54.720 --> 00:03:00.840
+Next, we have the "breed" column, so we add "breed" as a key, and
+
+74
+00:03:00.840 --> 00:03:05.120
+its corresponding value is a list containing "Dachshund" and "Dalmatian."
+
+75
+00:03:05.120 --> 00:03:05.120
+
+
+76
+00:03:05.120 --> 00:03:05.120
+
+
+77
+00:03:05.120 --> 00:03:12.200
+Then we have height_cm, which is 22 and 59, and weight_kg, which is 10 and 25.
+
+78
+00:03:12.200 --> 00:03:13.560
+
+
+79
+00:03:13.560 --> 00:03:13.560
+
+
+80
+00:03:13.560 --> 00:03:15.120
+Now that we have our dictionary of
+
+81
+00:03:15.120 --> 00:03:20.600
+lists set up, we can pass it into pd-dot-DataFrame to convert it into a pandas DataFrame.
+
+82
+00:03:20.600 --> 00:03:20.600
+
+
+83
+00:03:20.600 --> 00:03:20.600
+
+
+84
+00:03:20.600 --> 00:03:25.400
+If we print the new DataFrame, we can see that it's exactly what we wanted.
+
+85
+00:03:25.400 --> 00:03:25.400
+
+
+86
+00:03:25.400 --> 00:03:25.400
+
+
+87
+00:03:25.400 --> 00:03:31.720
+Time to practice creating your own DataFrames!
+

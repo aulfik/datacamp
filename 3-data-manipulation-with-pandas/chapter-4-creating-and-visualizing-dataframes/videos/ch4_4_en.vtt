@@ -1,0 +1,182 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.240
+You now know how to create your own DataFrames, but typing out your data
+
+2
+00:00:05.240 --> 00:00:11.320
+entry-by-entry isn't usually the most efficient way to get your data into a DataFrame.
+
+3
+00:00:11.320 --> 00:00:11.320
+
+
+4
+00:00:11.320 --> 00:00:11.320
+
+
+5
+00:00:11.320 --> 00:00:16.360
+In this video, you'll learn how to pull data from CSV files.
+
+6
+00:00:16.360 --> 00:00:16.360
+
+
+7
+00:00:16.360 --> 00:00:16.360
+
+
+8
+00:00:16.360 --> 00:00:22.800
+CSV, or comma-separated values, is a common data storage file type.
+
+9
+00:00:22.800 --> 00:00:22.800
+
+
+10
+00:00:22.800 --> 00:00:22.800
+
+
+11
+00:00:22.800 --> 00:00:26.640
+It's designed to store tabular data, just like a pandas DataFrame.
+
+12
+00:00:26.640 --> 00:00:28.000
+
+
+13
+00:00:28.000 --> 00:00:28.000
+
+
+14
+00:00:28.000 --> 00:00:35.760
+It's a text file, where each row of data has its own line, and each value is separated by a comma.
+
+15
+00:00:35.760 --> 00:00:35.800
+
+
+16
+00:00:35.800 --> 00:00:35.800
+
+
+17
+00:00:35.800 --> 00:00:43.320
+Almost every database, programming language, and piece of data analysis software can read and write CSV files.
+
+18
+00:00:43.320 --> 00:00:46.480
+That makes it a good storage format if you need to share your
+
+19
+00:00:46.480 --> 00:00:51.280
+data with other people who may be using different tools than you.
+
+20
+00:00:51.280 --> 00:00:51.280
+
+
+21
+00:00:51.280 --> 00:00:51.320
+
+
+22
+00:00:51.320 --> 00:00:53.920
+Remember the dogs from the last video?
+
+23
+00:00:53.920 --> 00:01:00.640
+Their data is stored in a CSV file called new_dogs-dot-csv, which looks like this.
+
+24
+00:01:00.640 --> 00:01:00.640
+
+
+25
+00:01:00.640 --> 00:01:00.640
+
+
+26
+00:01:00.640 --> 00:01:04.240
+We can put this data in a DataFrame using the handy pandas
+
+27
+00:01:04.240 --> 00:01:11.000
+function, read-underscore-csv, and pass it the file path of the CSV.
+
+28
+00:01:11.000 --> 00:01:11.000
+
+
+29
+00:01:11.000 --> 00:01:11.040
+
+
+30
+00:01:11.040 --> 00:01:18.080
+Now that the data is in DataFrame form, we can manipulate it using some of the functions from earlier in the course.
+
+31
+00:01:18.080 --> 00:01:18.080
+
+
+32
+00:01:18.080 --> 00:01:18.080
+
+
+33
+00:01:18.080 --> 00:01:22.120
+Here, we'll add a body mass index column.
+
+34
+00:01:22.120 --> 00:01:22.120
+
+
+35
+00:01:22.120 --> 00:01:22.120
+
+
+36
+00:01:22.120 --> 00:01:27.800
+Now that we've changed the data let's create an updated CSV file to share with the dogs' owners.
+
+37
+00:01:27.800 --> 00:01:27.800
+
+
+38
+00:01:27.800 --> 00:01:27.800
+
+
+39
+00:01:27.800 --> 00:01:38.560
+To convert a DataFrame to a CSV, we can use new_dogs dot to-underscore-csv, and pass in a new file path.
+
+40
+00:01:38.560 --> 00:01:38.560
+
+
+41
+00:01:38.560 --> 00:01:38.560
+
+
+42
+00:01:38.560 --> 00:01:42.080
+If we take a look at the new file, it contains the BMI column.
+
+43
+00:01:42.080 --> 00:01:42.080
+
+
+44
+00:01:42.080 --> 00:01:43.520
+
+
+45
+00:01:43.520 --> 00:01:49.000
+Now it's time to practice getting data in and out of pandas!
+

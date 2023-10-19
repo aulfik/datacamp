@@ -1,0 +1,346 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.680
+Plots are a powerful way to share the insights you've gained from your data.
+
+2
+00:00:05.680 --> 00:00:11.760
+In this lesson, we'll use a bigger dataset of dogs, called dog_pack, to make visualization easier.
+
+3
+00:00:11.760 --> 00:00:11.760
+
+
+4
+00:00:11.760 --> 00:00:13.120
+
+
+5
+00:00:13.120 --> 00:00:17.280
+Remember when we talked about matplotlib at the beginning of the course?
+
+6
+00:00:17.280 --> 00:00:25.120
+We'll need to import matplotlib-dot-pyplot as plt in order to display our visualizations.
+
+7
+00:00:25.120 --> 00:00:32.640
+Just like pd is the standard alias for pandas, plt is the standard alias for matplotlib-dot-pyplot.
+
+8
+00:00:32.640 --> 00:00:34.640
+
+
+9
+00:00:34.640 --> 00:00:34.640
+
+
+10
+00:00:34.640 --> 00:00:39.920
+Let's create a histogram, which shows the distribution of a numeric variable.
+
+11
+00:00:39.920 --> 00:00:47.000
+We can create a histogram of the height variable by selecting the column and calling dot-hist.
+
+12
+00:00:47.000 --> 00:00:47.000
+
+
+13
+00:00:47.000 --> 00:00:47.000
+
+
+14
+00:00:47.000 --> 00:00:52.080
+In order to show the plot, we need to call plt-dot-show.
+
+15
+00:00:52.080 --> 00:00:52.080
+
+
+16
+00:00:52.080 --> 00:00:52.080
+
+
+17
+00:00:52.080 --> 00:01:00.280
+The x-axis represents the heights of the dogs, and the y-axis represents the number of dogs in each height range.
+
+18
+00:01:00.280 --> 00:01:04.360
+By grouping observations into ranges, the histogram allows us to
+
+19
+00:01:04.360 --> 00:01:09.840
+see that there are a lot of dogs around 50 to 60 centimeters tall.
+
+20
+00:01:09.840 --> 00:01:09.840
+
+
+21
+00:01:09.840 --> 00:01:09.880
+
+
+22
+00:01:09.880 --> 00:01:14.680
+We can adjust the number of bars, or bins, using the "bins" argument.
+
+23
+00:01:14.680 --> 00:01:20.600
+Increasing or decreasing this can give us a better idea of what the distribution looks like.
+
+24
+00:01:20.600 --> 00:01:20.600
+
+
+25
+00:01:20.600 --> 00:01:20.600
+
+
+26
+00:01:20.600 --> 00:01:27.160
+Bar plots can reveal relationships between a categorical variable and a numeric variable, like breed and weight.
+
+27
+00:01:27.160 --> 00:01:27.160
+
+
+28
+00:01:27.160 --> 00:01:27.160
+
+
+29
+00:01:27.160 --> 00:01:31.480
+To compute the average weight of each breed, we
+
+30
+00:01:31.480 --> 00:01:37.800
+group by breed, select the weight column, and take the mean, giving us the average weight of each breed.
+
+31
+00:01:37.800 --> 00:01:39.200
+
+
+32
+00:01:39.200 --> 00:01:39.200
+
+
+33
+00:01:39.200 --> 00:01:46.520
+Now we can create a bar plot from the mean weights using the plot method, setting "kind" equal to "bar."
+
+34
+00:01:46.520 --> 00:01:49.040
+Finally, we call plt-dot-show.
+
+35
+00:01:49.040 --> 00:01:49.040
+
+
+36
+00:01:49.040 --> 00:01:49.040
+
+
+37
+00:01:49.040 --> 00:01:55.000
+To add a title to our plot, we can use the title argument of the plot method.
+
+38
+00:01:55.000 --> 00:01:55.000
+
+
+39
+00:01:55.000 --> 00:01:56.160
+
+
+40
+00:01:56.160 --> 00:01:59.120
+It looks like Saint Bernards are the heaviest breed on average!
+
+41
+00:01:59.120 --> 00:01:59.120
+Woof!
+
+42
+00:01:59.120 --> 00:02:01.360
+
+
+43
+00:02:01.360 --> 00:02:01.360
+
+
+44
+00:02:01.360 --> 00:02:06.560
+Line plots are great for visualizing changes in numeric variables over time.
+
+45
+00:02:06.560 --> 00:02:10.200
+Lucky for us, a Labrador named Sully has been weighed by his
+
+46
+00:02:10.200 --> 00:02:14.360
+owner every month - let's see how his weight has changed over the year.
+
+47
+00:02:14.360 --> 00:02:14.360
+
+
+48
+00:02:14.360 --> 00:02:14.360
+
+
+49
+00:02:14.360 --> 00:02:19.720
+We can use the plot method again, but this time, we pass in
+
+50
+00:02:19.720 --> 00:02:26.440
+three arguments: date as x, weight as y, and "kind" equals "line."
+
+51
+00:02:26.440 --> 00:02:29.120
+Sully's weight has fluctuated quite a bit over the year!
+
+52
+00:02:29.120 --> 00:02:31.600
+
+
+53
+00:02:31.600 --> 00:02:31.600
+
+
+54
+00:02:31.600 --> 00:02:35.880
+We may want to rotate the x-axis labels to make the text easier to read.
+
+55
+00:02:35.880 --> 00:02:41.560
+This can be done by passing an angle in degrees with the "rot" argument.
+
+56
+00:02:41.560 --> 00:02:46.080
+Here, we rotate the labels by 45 degrees.
+
+57
+00:02:46.080 --> 00:02:47.720
+
+
+58
+00:02:47.720 --> 00:02:47.720
+
+
+59
+00:02:47.720 --> 00:02:52.360
+Scatter plots are great for visualizing relationships between two numeric variables.
+
+60
+00:02:52.360 --> 00:02:58.040
+To plot each dog's height versus their weight, we call the plot method
+
+61
+00:02:58.040 --> 00:03:05.520
+with x equal to height_cm, y equal to weight_kg, and "kind" equal to "scatter."
+
+62
+00:03:05.520 --> 00:03:05.520
+
+
+63
+00:03:05.520 --> 00:03:05.520
+
+
+64
+00:03:05.520 --> 00:03:09.800
+From our plot, it looks like taller dogs tend to weigh more.
+
+65
+00:03:09.800 --> 00:03:09.800
+
+
+66
+00:03:09.800 --> 00:03:09.800
+
+
+67
+00:03:09.800 --> 00:03:13.960
+Plots can also be layered on top of one another.
+
+68
+00:03:13.960 --> 00:03:19.120
+For example, we can create a histogram of female dogs' heights,
+
+69
+00:03:19.120 --> 00:03:24.440
+and put a histogram of male dogs' heights on top, then call show.
+
+70
+00:03:24.440 --> 00:03:28.160
+However, we can't tell which color represents which sex.
+
+71
+00:03:28.160 --> 00:03:28.160
+
+
+72
+00:03:28.160 --> 00:03:29.560
+
+
+73
+00:03:29.560 --> 00:03:34.680
+We can use plt-dot-legend, passing in a list of labels, and then call show.
+
+74
+00:03:34.680 --> 00:03:40.960
+Now we know which color is which, but we can't see what's going on behind the orange histogram.
+
+75
+00:03:40.960 --> 00:03:40.960
+
+
+76
+00:03:40.960 --> 00:03:40.960
+
+
+77
+00:03:40.960 --> 00:03:45.920
+Let's fix this problem by making the histograms translucent.
+
+78
+00:03:45.920 --> 00:03:50.240
+We can use hist's alpha argument, which takes a number.
+
+79
+00:03:50.240 --> 00:03:56.640
+0 means completely transparent that is, invisible, and 1 means completely opaque.
+
+80
+00:03:56.640 --> 00:03:56.640
+
+
+81
+00:03:56.640 --> 00:03:56.640
+
+
+82
+00:03:56.640 --> 00:04:03.040
+In this chapter, you'll be working with a dataset that contains weekly US avocado
+
+83
+00:04:03.040 --> 00:04:08.680
+sales data, broken down by avocado size, and whether or not the avocados were organic.
+
+84
+00:04:08.680 --> 00:04:08.680
+
+
+85
+00:04:08.680 --> 00:04:08.680
+
+
+86
+00:04:08.680 --> 00:04:14.240
+Prepare to practice your pandas plotting!
+

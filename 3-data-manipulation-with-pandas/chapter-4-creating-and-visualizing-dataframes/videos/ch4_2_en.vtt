@@ -1,0 +1,206 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:07.280
+You could be given a DataFrame that has missing values, so it's important to know how to handle them.
+
+2
+00:00:07.280 --> 00:00:07.280
+
+
+3
+00:00:07.280 --> 00:00:07.320
+
+
+4
+00:00:07.320 --> 00:00:14.080
+Most data is not perfect - there's always a possibility that there are some pieces missing from your dataset.
+
+5
+00:00:14.080 --> 00:00:19.080
+For example, maybe on the day that Bella and Cooper's owner weighed them,
+
+6
+00:00:19.080 --> 00:00:19.080
+
+
+7
+00:00:19.080 --> 00:00:21.160
+the scale was broken.
+
+8
+00:00:21.160 --> 00:00:25.880
+Now we have two missing values in our dataset.
+
+9
+00:00:25.880 --> 00:00:25.880
+
+
+10
+00:00:25.880 --> 00:00:25.880
+
+
+11
+00:00:25.880 --> 00:00:33.720
+In a pandas DataFrame, missing values are indicated with N-a-N, which stands for "not a number."
+
+12
+00:00:33.720 --> 00:00:33.720
+
+
+13
+00:00:33.720 --> 00:00:33.760
+
+
+14
+00:00:33.760 --> 00:00:36.640
+When you first get a DataFrame, it's a good idea to get a
+
+15
+00:00:36.640 --> 00:00:42.880
+sense of whether it contains any missing values, and if so, how many.
+
+16
+00:00:42.880 --> 00:00:46.000
+That's where the isna method comes in.
+
+17
+00:00:46.000 --> 00:00:53.320
+When we call isna on a DataFrame, we get a Boolean for every single value indicating whether
+
+18
+00:00:53.320 --> 00:00:58.640
+the value is missing or not, but this isn't very helpful when you're working with a lot of data.
+
+19
+00:00:58.640 --> 00:01:00.200
+
+
+20
+00:01:00.200 --> 00:01:00.200
+
+
+21
+00:01:00.200 --> 00:01:04.880
+If we chain dot-isna with dot-any, we get one value for each
+
+22
+00:01:04.880 --> 00:01:09.720
+variable that tells us if there are any missing values in that column.
+
+23
+00:01:09.720 --> 00:01:15.600
+Here, we see that there's at least one missing value in the weight column, but not in any of the others.
+
+24
+00:01:15.600 --> 00:01:17.400
+
+
+25
+00:01:17.400 --> 00:01:17.400
+
+
+26
+00:01:17.400 --> 00:01:19.800
+Since taking the sum of Booleans is the same
+
+27
+00:01:19.800 --> 00:01:28.920
+thing as counting the number of Trues, we can combine sum with isna to count the number of NaNs in each column.
+
+28
+00:01:28.920 --> 00:01:28.920
+
+
+29
+00:01:28.920 --> 00:01:28.920
+
+
+30
+00:01:28.920 --> 00:01:33.680
+We can use those counts to visualize the missing values in the dataset using a bar plot.
+
+31
+00:01:33.680 --> 00:01:33.680
+
+
+32
+00:01:33.680 --> 00:01:33.680
+
+
+33
+00:01:33.680 --> 00:01:37.680
+Plots like this are more interesting when you have missing
+
+34
+00:01:37.680 --> 00:01:43.800
+data across different variables, while here, only weights are missing.
+
+35
+00:01:43.800 --> 00:01:43.800
+
+
+36
+00:01:43.800 --> 00:01:43.800
+
+
+37
+00:01:43.800 --> 00:01:49.680
+Now that we know there are missing values in the dataset, what can we do about them?
+
+38
+00:01:49.680 --> 00:01:49.680
+
+
+39
+00:01:49.680 --> 00:01:49.680
+
+
+40
+00:01:49.680 --> 00:01:53.960
+One option is to remove the rows in the DataFrame that contain missing values.
+
+41
+00:01:53.960 --> 00:01:58.600
+This can be done using the dropna method.
+
+42
+00:01:58.600 --> 00:02:05.160
+However, this may not be ideal if you have a lot of missing data, since that means losing a lot of observations.
+
+43
+00:02:05.160 --> 00:02:06.560
+
+
+44
+00:02:06.560 --> 00:02:06.560
+
+
+45
+00:02:06.560 --> 00:02:09.920
+Another option is to replace missing values with another value.
+
+46
+00:02:09.920 --> 00:02:17.960
+The fillna method takes in a value, and all NaNs will be replaced with this value.
+
+47
+00:02:17.960 --> 00:02:21.280
+There are also many sophisticated techniques for replacing missing
+
+48
+00:02:21.280 --> 00:02:26.520
+values, which you can learn more about in our course about missing data.
+
+49
+00:02:26.520 --> 00:02:26.520
+
+
+50
+00:02:26.520 --> 00:02:26.520
+
+
+51
+00:02:26.520 --> 00:02:32.200
+Alright, time to wrangle with some missing values on your own!
+

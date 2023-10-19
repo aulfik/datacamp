@@ -1,0 +1,358 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.920
+Slicing is a technique for selecting consecutive elements from objects.
+
+2
+00:00:05.920 --> 00:00:05.920
+
+
+3
+00:00:05.920 --> 00:00:05.920
+
+
+4
+00:00:05.920 --> 00:00:08.400
+Here are the dog breeds, this time as a list.
+
+5
+00:00:08.400 --> 00:00:08.400
+
+
+6
+00:00:08.400 --> 00:00:09.440
+
+
+7
+00:00:09.440 --> 00:00:17.160
+To slice the list, you pass first and last positions separated by a colon into square brackets.
+
+8
+00:00:17.160 --> 00:00:24.080
+Remember that Python positions start from zero, so 2 refers to the third element, Chow Chow.
+
+9
+00:00:24.080 --> 00:00:33.000
+Also remember that the last position, 5, is not included in the slice, so we finish at Labrador, not Chihuahua.
+
+10
+00:00:33.000 --> 00:00:33.000
+
+
+11
+00:00:33.000 --> 00:00:33.000
+
+
+12
+00:00:33.000 --> 00:00:38.160
+If you want the slice to start from the beginning of the list, you can omit the zero.
+
+13
+00:00:38.160 --> 00:00:44.200
+Here, using colon-3 returns the first three elements.
+
+14
+00:00:44.200 --> 00:00:44.200
+
+
+15
+00:00:44.200 --> 00:00:44.240
+
+
+16
+00:00:44.240 --> 00:00:49.600
+Slicing with colon on its own returns the whole list.
+
+17
+00:00:49.600 --> 00:00:49.600
+
+
+18
+00:00:49.600 --> 00:00:49.600
+
+
+19
+00:00:49.600 --> 00:00:55.200
+You can also slice DataFrames, but first, you need to sort the index.
+
+20
+00:00:55.200 --> 00:01:03.440
+Here, the dogs dataset has been given a multi-level index of breed and color; then, the index is sorted with sort_index.
+
+21
+00:01:03.440 --> 00:01:03.440
+
+
+22
+00:01:03.440 --> 00:01:03.440
+
+
+23
+00:01:03.440 --> 00:01:12.240
+To slice rows at the outer level of an index, you call loc, passing the first and last values separated by a colon.
+
+24
+00:01:12.240 --> 00:01:12.240
+
+
+25
+00:01:12.240 --> 00:01:13.480
+
+
+26
+00:01:13.480 --> 00:01:15.920
+The full dataset is shown on the right for comparison.
+
+27
+00:01:15.920 --> 00:01:15.920
+
+
+28
+00:01:15.920 --> 00:01:17.200
+
+
+29
+00:01:17.200 --> 00:01:21.080
+There are two differences compared to slicing lists.
+
+30
+00:01:21.080 --> 00:01:26.440
+Rather than specifying row numbers, you specify index values.
+
+31
+00:01:26.440 --> 00:01:31.080
+Secondly, notice that the final value is included.
+
+32
+00:01:31.080 --> 00:01:33.520
+Here, Poodle is included in the results.
+
+33
+00:01:33.520 --> 00:01:33.520
+
+
+34
+00:01:33.520 --> 00:01:35.040
+
+
+35
+00:01:35.040 --> 00:01:37.960
+The same technique doesn't work on inner index levels.
+
+36
+00:01:37.960 --> 00:01:45.320
+Here, trying to slice from Tan to Grey returns an empty DataFrame instead of the six dogs we wanted.
+
+37
+00:01:45.320 --> 00:01:45.320
+
+
+38
+00:01:45.320 --> 00:01:46.600
+
+
+39
+00:01:46.600 --> 00:01:48.480
+It's important to understand the danger here.
+
+40
+00:01:48.480 --> 00:01:54.080
+pandas doesn't throw an error to let you know that there is a problem, so be careful when coding.
+
+41
+00:01:54.080 --> 00:01:55.400
+
+
+42
+00:01:55.400 --> 00:01:55.400
+
+
+43
+00:01:55.400 --> 00:02:03.680
+The correct approach to slicing at inner index levels is to pass the first and last positions as tuples.
+
+44
+00:02:03.680 --> 00:02:08.920
+Here, the first element to include is a tuple of Labrador and Brown.
+
+45
+00:02:08.920 --> 00:02:08.920
+
+
+46
+00:02:08.920 --> 00:02:08.920
+
+
+47
+00:02:08.920 --> 00:02:16.240
+Since DataFrames are two-dimensional objects, you can also slice columns.
+
+48
+00:02:16.240 --> 00:02:18.680
+You do this by passing two arguments to loc.
+
+49
+00:02:18.680 --> 00:02:18.680
+
+
+50
+00:02:18.680 --> 00:02:18.680
+
+
+51
+00:02:18.680 --> 00:02:24.840
+The simplest case involves subsetting columns but keeping all rows.
+
+52
+00:02:24.840 --> 00:02:31.240
+To do this, pass a colon as the first argument to loc.
+
+53
+00:02:31.240 --> 00:02:36.000
+As with slicing lists, a colon by itself means "keep everything."
+
+54
+00:02:36.000 --> 00:02:36.000
+
+
+55
+00:02:36.000 --> 00:02:37.600
+
+
+56
+00:02:37.600 --> 00:02:41.880
+The second argument takes column names as the first and last positions to slice on.
+
+57
+00:02:41.880 --> 00:02:43.480
+
+
+58
+00:02:43.480 --> 00:02:43.480
+
+
+59
+00:02:43.480 --> 00:02:49.480
+You can slice on rows and columns at the same time: simply pass the appropriate slice to each argument.
+
+60
+00:02:49.480 --> 00:02:54.560
+Here, you see the previous two slices being performed in the same line of code.
+
+61
+00:02:54.560 --> 00:02:54.560
+
+
+62
+00:02:54.560 --> 00:02:54.560
+
+
+63
+00:02:54.560 --> 00:03:00.720
+An important use case of slicing is to subset DataFrames by a range of dates.
+
+64
+00:03:00.720 --> 00:03:06.920
+To demonstrate this, let's set the date_of_birth column as the index and sort by this index.
+
+65
+00:03:06.920 --> 00:03:06.920
+
+
+66
+00:03:06.920 --> 00:03:06.920
+
+
+67
+00:03:06.920 --> 00:03:10.920
+You slice dates with the same syntax as other types.
+
+68
+00:03:10.920 --> 00:03:14.440
+The first and last dates are passed as strings.
+
+69
+00:03:14.440 --> 00:03:14.440
+
+
+70
+00:03:14.440 --> 00:03:14.440
+
+
+71
+00:03:14.440 --> 00:03:19.280
+One helpful feature is that you can slice by partial dates.
+
+72
+00:03:19.280 --> 00:03:28.120
+Here, the first and last positions are only specified as 2014 and 2016, with no month or day parts.
+
+73
+00:03:28.120 --> 00:03:28.120
+
+
+74
+00:03:28.120 --> 00:03:28.120
+
+
+75
+00:03:28.120 --> 00:03:32.960
+pandas interprets this as slicing from the start of 2014
+
+76
+00:03:32.960 --> 00:03:41.120
+to the end of 2016; that is, all dates in 2014, 2015, and 2016.
+
+77
+00:03:41.120 --> 00:03:41.120
+
+
+78
+00:03:41.120 --> 00:03:41.120
+
+
+79
+00:03:41.120 --> 00:03:47.320
+You can also slice DataFrames by row or column number using the iloc method.
+
+80
+00:03:47.320 --> 00:03:47.320
+
+
+81
+00:03:47.320 --> 00:03:47.320
+
+
+82
+00:03:47.320 --> 00:03:56.160
+This uses a similar syntax to slicing lists, except that there are two arguments: one for rows and one for columns.
+
+83
+00:03:56.160 --> 00:03:56.160
+
+
+84
+00:03:56.160 --> 00:03:56.160
+
+
+85
+00:03:56.160 --> 00:04:03.600
+Notice that, like list slicing but unlike loc, the final values aren't included in the slice.
+
+86
+00:04:03.600 --> 00:04:08.240
+In this case, the fifth row and fourth column aren't included.
+
+87
+00:04:08.240 --> 00:04:08.240
+
+
+88
+00:04:08.240 --> 00:04:08.240
+
+
+89
+00:04:08.240 --> 00:04:13.280
+Time for a nice slice!
+

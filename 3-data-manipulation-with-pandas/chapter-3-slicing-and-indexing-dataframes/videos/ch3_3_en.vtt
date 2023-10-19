@@ -1,0 +1,178 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.400
+You saw how to create pivot tables with pandas in chapter two.
+
+2
+00:00:05.400 --> 00:00:10.760
+In this lesson, you'll perform subsetting and calculations on pivot tables.
+
+3
+00:00:10.760 --> 00:00:10.760
+
+
+4
+00:00:10.760 --> 00:00:10.760
+
+
+5
+00:00:10.760 --> 00:00:13.880
+Here's a larger version of the dog dataset.
+
+6
+00:00:13.880 --> 00:00:17.760
+The extra dogs mean we have something to compute on.
+
+7
+00:00:17.760 --> 00:00:17.760
+
+
+8
+00:00:17.760 --> 00:00:17.760
+
+
+9
+00:00:17.760 --> 00:00:22.560
+Recall that you create a pivot table by calling dot-pivot_table.
+
+10
+00:00:22.560 --> 00:00:28.000
+The first argument is the column name containing values to aggregate.
+
+11
+00:00:28.000 --> 00:00:31.240
+The index argument lists the columns to group by
+
+12
+00:00:31.240 --> 00:00:39.360
+and display in rows, and the columns argument lists the columns to group by and display in columns.
+
+13
+00:00:39.360 --> 00:00:39.360
+
+
+14
+00:00:39.360 --> 00:00:39.360
+
+
+15
+00:00:39.360 --> 00:00:42.280
+We'll use the default aggregation function, which is mean.
+
+16
+00:00:42.280 --> 00:00:43.720
+
+
+17
+00:00:43.720 --> 00:00:43.720
+
+
+18
+00:00:43.720 --> 00:00:48.080
+Pivot tables are just DataFrames with sorted indexes.
+
+19
+00:00:48.080 --> 00:00:52.240
+That means that all the fun stuff you've learned so far this chapter can be used on them.
+
+20
+00:00:52.240 --> 00:00:53.720
+
+
+21
+00:00:53.720 --> 00:00:53.720
+
+
+22
+00:00:53.720 --> 00:01:01.880
+In particular, the loc and slicing combination is ideal for subsetting pivot tables, like so.
+
+23
+00:01:01.880 --> 00:01:01.880
+
+
+24
+00:01:01.880 --> 00:01:01.880
+
+
+25
+00:01:01.880 --> 00:01:07.720
+The methods for calculating summary statistics on a DataFrame, such as mean, have an axis argument.
+
+26
+00:01:07.720 --> 00:01:08.800
+
+
+27
+00:01:08.800 --> 00:01:08.800
+
+
+28
+00:01:08.800 --> 00:01:15.320
+The default value is "index," which means "calculate the statistic across rows."
+
+29
+00:01:15.320 --> 00:01:18.440
+Here, the mean is calculated for each color.
+
+30
+00:01:18.440 --> 00:01:21.960
+That is, "across the breeds."
+
+31
+00:01:21.960 --> 00:01:25.440
+The behavior is the same as if you hadn't specified the axis argument.
+
+32
+00:01:25.440 --> 00:01:25.440
+
+
+33
+00:01:25.440 --> 00:01:25.440
+
+
+34
+00:01:25.440 --> 00:01:35.680
+To calculate a summary statistic for each row, that is, "across the columns," you set axis to "columns."
+
+35
+00:01:35.680 --> 00:01:39.000
+Here, the mean height is calculated for each breed.
+
+36
+00:01:39.000 --> 00:01:42.040
+That is, "across the colors."
+
+37
+00:01:42.040 --> 00:01:42.040
+
+
+38
+00:01:42.040 --> 00:01:42.040
+
+
+39
+00:01:42.040 --> 00:01:45.360
+For most DataFrames, setting the axis argument doesn't make
+
+40
+00:01:45.360 --> 00:01:48.880
+any sense, since you'll have different data types in each column.
+
+41
+00:01:48.880 --> 00:01:55.840
+Pivot tables are a special case since every column contains the same data type.
+
+42
+00:01:55.840 --> 00:01:55.840
+
+
+43
+00:01:55.840 --> 00:01:55.840
+
+
+44
+00:01:55.840 --> 00:02:01.280
+Time to play with pivot tables!
+

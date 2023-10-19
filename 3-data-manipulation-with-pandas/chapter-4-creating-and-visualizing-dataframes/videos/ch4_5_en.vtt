@@ -1,0 +1,126 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.680
+Congratulations!
+
+2
+00:00:02.680 --> 00:00:06.160
+You've now covered the basics of using pandas.
+
+3
+00:00:06.160 --> 00:00:06.160
+
+
+4
+00:00:06.160 --> 00:00:06.160
+
+
+5
+00:00:06.160 --> 00:00:12.960
+In chapter 1, you saw how to subset and sort DataFrames and how to add new columns.
+
+6
+00:00:12.960 --> 00:00:12.960
+
+
+7
+00:00:12.960 --> 00:00:12.960
+
+
+8
+00:00:12.960 --> 00:00:20.760
+In chapter 2, you saw several methods for aggregating and grouping data to calculate summary statistics.
+
+9
+00:00:20.760 --> 00:00:20.760
+
+
+10
+00:00:20.760 --> 00:00:20.760
+
+
+11
+00:00:20.760 --> 00:00:27.120
+In chapter 3, you saw how using indexing and slicing allows for simpler subsetting.
+
+12
+00:00:27.120 --> 00:00:27.120
+
+
+13
+00:00:27.120 --> 00:00:27.120
+
+
+14
+00:00:27.120 --> 00:00:36.120
+In chapter 4, you saw how to visualize a DataFrame, and how to read data from and write data to CSV files.
+
+15
+00:00:36.120 --> 00:00:36.120
+
+
+16
+00:00:36.120 --> 00:00:36.120
+
+
+17
+00:00:36.120 --> 00:00:41.360
+I hope you are convinced that pandas is a powerful tool to analyze tabular data.
+
+18
+00:00:41.360 --> 00:00:47.120
+In fact, pandas is so powerful that there are many features that we didn't get around to discussing in this course.
+
+19
+00:00:47.120 --> 00:00:47.120
+
+
+20
+00:00:47.120 --> 00:00:47.120
+
+
+21
+00:00:47.120 --> 00:00:51.240
+To begin with, everything in this course involved a single
+
+22
+00:00:51.240 --> 00:00:57.400
+DataFrame, but sometimes you need to join or "merge" several DataFrames together.
+
+23
+00:00:57.400 --> 00:00:57.400
+
+
+24
+00:00:57.400 --> 00:00:57.400
+
+
+25
+00:00:57.400 --> 00:01:03.920
+Reading from CSV files barely scratches the surface of the options for importing data into pandas.
+
+26
+00:01:03.920 --> 00:01:03.920
+
+
+27
+00:01:03.920 --> 00:01:03.920
+
+
+28
+00:01:03.920 --> 00:01:09.000
+You can also perform very sophisticated exploratory data analysis using pandas.
+
+29
+00:01:09.000 --> 00:01:10.120
+
+
+30
+00:01:10.120 --> 00:01:10.120
+
+
+31
+00:01:10.120 --> 00:01:14.720
+Congratulations, and have fun learning!
+
